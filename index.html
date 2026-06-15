@@ -1,289 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Photography Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Anya Stsetskevich · Honest & Emotional Photography</title>
+    <meta name="description" content="Portrait, street and pet photographer based in Toronto & GTA. Capturing people and moments with honesty, warmth, and emotion.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-:root{
-  --bg:#F4F1EC;
-  --dark:#151206;
-  --gold:#9B9144;
-  --muted:#686025;
-}
+        body {
+            background-color: #F4F1EC;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            color: #151206;
+            overflow-x: hidden;
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+        /* smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
 
-body{
-  background:var(--bg);
-  color:var(--dark);
-}
+        /* custom selection */
+        ::selection {
+            background: #9B9144;
+            color: #F4F1EC;
+        }
 
-/* NAV */
-nav{
-  position:fixed;
-  top:0;left:0;right:0;
-  padding:30px 60px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:100;
-  transition:.4s;
-}
+        /* container & utility */
+        .container-custom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
 
-nav.scrolled{
-  background:rgba(244,241,236,0.8);
-  backdrop-filter:blur(10px);
-}
+        @media (min-width: 768px) {
+            .container-custom {
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container-custom {
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+        }
 
-.nav-links button{
-  background:none;
-  border:none;
-  margin-left:40px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  cursor:pointer;
-  color:rgba(21,18,6,.6);
-}
+        /* animations */
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
 
-.nav-links button:hover{
-  color:var(--gold);
-}
+        /* nav mobile */
+        .mobile-menu-open {
+            max-height: 380px;
+            opacity: 1;
+            visibility: visible;
+        }
 
-/* HERO */
-.hero{
-  height:70vh;
-  background:url('https://images.unsplash.com/photo-1520975958225-6bcd9f9c1c9f') center/cover;
-  position:relative;
-  display:flex;
-  align-items:flex-end;
-  padding:60px;
-  color:white;
-}
-
-.hero::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.4);
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-}
-
-.hero h1{
-  font-size:70px;
-  font-weight:200;
-  letter-spacing:.15em;
-}
-
-.hero p{
-  margin-top:10px;
-  letter-spacing:.4em;
-  color:#DFD480;
-}
-
-/* SECTIONS */
-section{
-  padding:80px 60px;
-  max-width:1200px;
-  margin:auto;
-}
-
-h2{
-  font-weight:200;
-  margin-bottom:40px;
-  letter-spacing:.1em;
-  color:var(--dark);
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
-
-.card{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-}
-
-/* PORTFOLIO */
-.project img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-  border-radius:10px;
-  transition:.3s;
-}
-
-.project:hover img{
-  transform:scale(1.03);
-}
-
-.project-title{
-  margin-top:10px;
-  display:flex;
-  justify-content:space-between;
-  font-weight:300;
-}
-
-/* ABOUT */
-.about p{
-  line-height:1.8;
-  margin-bottom:20px;
-}
-
-/* CONTACT */
-.contact{
-  background:white;
-  border-radius:20px;
-  padding:40px;
-}
-
-input,textarea{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  margin-bottom:20px;
-  border:1px solid #ddd;
-  border-radius:8px;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  color:rgba(0,0,0,.5);
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  nav{padding:20px;}
-  .hero h1{font-size:40px;}
-  section{padding:60px 20px;}
-}
-</style>
+        /* session type active */
+        .session-btn.active {
+            border-color: #9B9144 !important;
+            background-color: #9B9144/10 !important;
+            box-shadow: 0 2px 8px rgba(155,145,68,0.1);
+        }
+        .session-btn.active span:last-child {
+            color: #9B9144 !important;
+            font-weight: 500;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<nav id="nav">
-  <div><strong style="letter-spacing:.3em;">ANYA</strong></div>
-  <div class="nav-links">
-    <button onclick="scrollToSection('work')">Work</button>
-    <button onclick="scrollToSection('about')">About</button>
-    <button onclick="scrollToSection('contact')">Contact</button>
-  </div>
-</nav>
+    <!-- Navigation -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-700 bg-transparent" id="navbar">
+        <div class="container-custom flex items-center justify-between py-6 md:py-8">
+            <a href="#" class="text-[#F4F1EC] text-lg md:text-xl tracking-[0.22em] uppercase font-light transition-colors duration-500 hover:text-[#DFD480]">Anya Stsetskevich</a>
+            <div class="hidden md:flex items-center gap-12">
+                <button onclick="scrollToSection('portfolio')" class="text-[#F4F1EC]/80 hover:text-[#DFD480] text-sm uppercase tracking-[0.22em] transition-all duration-300">Work</button>
+                <button onclick="scrollToSection('about')" class="text-[#F4F1EC]/80 hover:text-[#DFD480] text-sm uppercase tracking-[0.22em] transition-all duration-300">About</button>
+                <button onclick="scrollToSection('contact')" class="text-[#F4F1EC]/80 hover:text-[#DFD480] text-sm uppercase tracking-[0.22em] transition-all duration-300">Contact</button>
+            </div>
+            <button id="menuBtn" class="md:hidden text-[#F4F1EC] focus:outline-none">
+                <svg width="26" height="18" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="1.5" x2="21" y2="1.5"/><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="14.5" x2="21" y2="14.5"/></svg>
+            </button>
+        </div>
+        <!-- mobile menu -->
+        <div id="mobileMenu" class="md:hidden overflow-hidden transition-all duration-700 max-h-0 opacity-0 bg-[#F4F1EC] shadow-md">
+            <div class="flex flex-col items-center gap-8 py-8">
+                <button onclick="scrollToSection('portfolio'); closeMobileMenu()" class="text-[#686025] text-base uppercase tracking-[0.22em] font-light hover:text-[#9B9144] transition">Work</button>
+                <button onclick="scrollToSection('about'); closeMobileMenu()" class="text-[#686025] text-base uppercase tracking-[0.22em] font-light hover:text-[#9B9144] transition">About</button>
+                <button onclick="scrollToSection('contact'); closeMobileMenu()" class="text-[#686025] text-base uppercase tracking-[0.22em] font-light hover:text-[#9B9144] transition">Contact</button>
+            </div>
+        </div>
+    </nav>
 
-<div class="hero">
-  <div class="hero-content">
-    <h1>ANYA</h1>
-    <p>PHOTOGRAPHY</p>
-  </div>
-</div>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative w-full overflow-hidden" style="height: 45vh; min-height: 340px;">
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1534088568595-a76e6d88e4b1?q=80&w=2070&auto=format" alt="Hero photography background" class="h-full w-full object-cover opacity-70">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#151206]/70 via-[#151206]/20 to-transparent"></div>
+            </div>
+            <div class="relative z-10 flex h-full items-end pb-12 pl-6 pr-[40%] md:pl-12 md:pr-[45%] lg:pl-20 lg:pr-[50%]">
+                <div>
+                    <h1 class="text-[#F4F1EC] text-6xl md:text-7xl lg:text-8xl font-[200] tracking-[0.12em] leading-[1.1] animate-fade-up">Anya Stsetskevich</h1>
+                    <p class="text-[#DFD480]/80 uppercase tracking-[0.4em] text-sm md:text-base font-light mt-4 animate-fade-up delay-100">Photography</p>
+                </div>
+            </div>
+        </section>
 
-<section id="work">
-  <h2>WORK</h2>
+        <!-- PORTFOLIO SECTION -->
+        <section id="portfolio" class="bg-[#F4F1EC] py-16 md:py-24">
+            <div class="container-custom max-w-[1100px] mx-auto">
+                <!-- header -->
+                <div class="mb-12">
+                    <p class="text-[#9B9144] uppercase tracking-[0.25em] text-sm font-normal">Work</p>
+                </div>
 
-  <div class="grid">
+                <!-- Portrait Photography -->
+                <div class="mb-16 md:mb-24">
+                    <p class="text-[#312F07] uppercase tracking-[0.18em] text-base md:text-lg font-normal mb-8 md:mb-12">Portrait Photography</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
+                        <!-- dynamic items -->
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=800&h=1067&fit=crop" alt="Street Portrait Compilation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Street Portrait Compilation</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></a></div>
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1067&fit=crop" alt="Yozefa Stsiatskevich" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Yozefa Stsiatskevich</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2024</span></div></a></div>
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1067&fit=crop" alt="Kayla" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Kayla</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></a></div>
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=1067&fit=crop" alt="Naveed" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Naveed</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></a></div>
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&h=1067&fit=crop" alt="Selv" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Selv</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></a></div>
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=800&h=1067&fit=crop" alt="Chris" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Chris</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></a></div>
+                    </div>
+                </div>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
-      <div class="project-title">
-        <span>Street Portrait</span><span>2025</span>
-      </div>
-    </div>
+                <!-- Family Photography -->
+                <div class="mb-16 md:mb-24">
+                    <p class="text-[#312F07] uppercase tracking-[0.18em] text-base md:text-lg font-normal mb-8 md:mb-12">Family Photography</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1516589091380-5d8e8b4d3b6e?w=800&h=1067&fit=crop" alt="Engagement Photography" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Engagement Photography</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></a></div>
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=800&h=1067&fit=crop" alt="McLaren" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">McLaren</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></a></div>
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1067&fit=crop" alt="Natalia Hordynska" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Natalia Hordynska</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2024</span></div></a></div>
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=800&h=1067&fit=crop" alt="Nyguven" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Nyguven</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2024</span></div></a></div>
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&h=1067&fit=crop" alt="Erika and Zhenia" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Erika and Zhenia</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></a></div>
+                    </div>
+                </div>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91">
-      <div class="project-title">
-        <span>Yozefa</span><span>2024</span>
-      </div>
-    </div>
+                <!-- Pets Photography -->
+                <div class="">
+                    <p class="text-[#312F07] uppercase tracking-[0.18em] text-base md:text-lg font-normal mb-8 md:mb-12">Pets Photography</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800&h=1067&fit=crop" alt="Ozër" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Ozër</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2023</span></div></a></div>
+                        <div class="group"><a href="#"><div class="overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=800&h=1067&fit=crop" alt="Charlie" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"></div><div class="mt-4"><span class="text-[#151206] text-lg font-light tracking-wide group-hover:text-[#9B9144] transition">Charlie</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2023</span></div></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
-      <div class="project-title">
-        <span>Kayla</span><span>2025</span>
-      </div>
-    </div>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="px-6 py-28 md:py-36 lg:px-20 bg-[#F4F1EC]">
+            <div class="max-w-[1400px] mx-auto">
+                <div class="mb-16 flex items-baseline justify-between border-b border-[#9B9144]/30 pb-5">
+                    <p class="text-[#9B9144] uppercase tracking-[0.35em] text-sm font-normal">About</p>
+                    <p class="text-[#9B9144]/60 tracking-[0.15em] text-[0.75rem] hidden md:block font-light">Toronto & GTA · Portrait · Street · Pets</p>
+                </div>
+                <h2 class="text-[#151206] text-4xl md:text-6xl lg:text-7xl font-[200] leading-[1.2] mb-12 md:mb-16">Capturing people and moments<br><span class="text-[#9B9144]">with honesty, warmth,</span><br>and emotion.</h2>
+                <div class="grid md:grid-cols-2 gap-12 mb-24">
+                    <p class="text-[#151206] text-lg md:text-xl font-light leading-relaxed tracking-wide">Anya Stsetsevich is a portrait, street, and pet photographer based in Toronto and the GTA. Her work is centered around the beauty of natural expression — the unfiltered laughter, quiet vulnerability, spontaneous movement, and small details that make every person and every story unique.</p>
+                    <p class="text-[#151206] text-lg md:text-xl font-light leading-relaxed tracking-wide">Rather than creating perfect images, Anya focuses on preserving real feelings and genuine connection exactly as they are. Inspired by everyday life and human stories, she creates photographs that feel alive, personal, and timeless — images that hold emotion long after the moment has passed.</p>
+                </div>
+                <div class="flex items-center gap-6 my-12 md:my-16">
+                    <div class="flex-1 h-px bg-[#9B9144]/20"></div>
+                    <p class="text-[#686025] italic text-center text-xl md:text-2xl font-light tracking-wide">"Here will be a phrase."</p>
+                    <div class="flex-1 h-px bg-[#9B9144]/20"></div>
+                </div>
+                <div class="mb-20 max-w-4xl">
+                    <p class="text-[#151206]/80 text-base md:text-lg font-light leading-relaxed">Every session is a collaboration — a space where people can be themselves, feel comfortable, and let their true personality shine through. Whether it's a family gathering, a quiet portrait, a playful pet, or a fleeting street moment, the goal is always the same: to tell your story with authenticity and care.</p>
+                </div>
+                <!-- photographer portrait -->
+                <div class="relative overflow-hidden rounded-sm group">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=1400&h=933&fit=crop" alt="Anya Stsetskevich — Photographer" class="w-full h-auto transition-transform duration-1000 group-hover:scale-[1.01] brightness-95">
+                </div>
+                <div class="flex justify-center mt-16">
+                    <button onclick="scrollToSection('contact')" class="group relative px-12 py-4 md:px-20 md:py-5 border border-[#9B9144]/50 text-[#9B9144] uppercase tracking-[0.3em] text-sm md:text-base font-normal transition-all duration-500 hover:border-[#9B9144] hover:bg-[#9B9144]/5">Book a Session</button>
+                </div>
+            </div>
+        </section>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1507143550189-fed454f93097">
-      <div class="project-title">
-        <span>Naveed</span><span>2025</span>
-      </div>
-    </div>
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="relative bg-[#F4F1EC] px-6 py-32 md:py-36 lg:px-20 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#9B9144]/20 to-transparent"></div>
+            <div class="max-w-[1100px] mx-auto">
+                <div class="text-center mb-14 md:mb-20">
+                    <p class="text-[#9B9144] uppercase tracking-[0.4em] text-xs font-medium mb-4">Let's Create Together</p>
+                    <h2 class="text-[#151206] text-4xl md:text-6xl font-[200] tracking-tight">Book Your Session</h2>
+                    <p class="mt-5 text-[#151206]/60 max-w-lg mx-auto text-base leading-relaxed">Every great photo starts with a conversation. Tell me about your vision and let's bring it to life.</p>
+                </div>
+                <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-3">
+                        <form id="bookingForm" class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-xl border border-[#9B9144]/10">
+                            <div class="space-y-8">
+                                <div>
+                                    <label class="block text-[#151206]/70 text-xs uppercase tracking-wider mb-2">Your Name <span class="text-[#9B9144]">*</span></label>
+                                    <input type="text" id="nameInput" required placeholder="How should I address you?" class="w-full bg-transparent border-b-2 border-[#151206]/10 pb-2 text-[#151206] text-lg font-light focus:border-[#9B9144] outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-[#151206]/70 text-xs uppercase tracking-wider mb-2">Email Address <span class="text-[#9B9144]">*</span></label>
+                                    <input type="email" id="emailInput" required placeholder="your@email.com" class="w-full bg-transparent border-b-2 border-[#151206]/10 pb-2 text-[#151206] text-lg font-light focus:border-[#9B9144] outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-[#151206]/70 text-xs uppercase tracking-wider mb-4">Type of Session <span class="text-[#9B9144]">*</span></label>
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="sessionTypeGroup">
+                                        <button type="button" data-session="Portrait Session" class="session-btn p-3 rounded-xl border-2 border-[#151206]/10 hover:border-[#9B9144]/40 transition-all bg-transparent"><span class="block text-2xl mb-1">🎭</span><span class="text-[#151206]/70 text-xs font-medium">Portrait Session</span></button>
+                                        <button type="button" data-session="Street Photography" class="session-btn p-3 rounded-xl border-2 border-[#151206]/10 hover:border-[#9B9144]/40 transition-all bg-transparent"><span class="block text-2xl mb-1">🏙️</span><span class="text-[#151206]/70 text-xs font-medium">Street Photography</span></button>
+                                        <button type="button" data-session="Pet Photography" class="session-btn p-3 rounded-xl border-2 border-[#151206]/10 hover:border-[#9B9144]/40 transition-all bg-transparent"><span class="block text-2xl mb-1">🐾</span><span class="text-[#151206]/70 text-xs font-medium">Pet Photography</span></button>
+                                        <button type="button" data-session="Family Session" class="session-btn p-3 rounded-xl border-2 border-[#151206]/10 hover:border-[#9B9144]/40 transition-all bg-transparent"><span class="block text-2xl mb-1">👨‍👩‍👧</span><span class="text-[#151206]/70 text-xs font-medium">Family Session</span></button>
+                                        <button type="button" data-session="Event Coverage" class="session-btn p-3 rounded-xl border-2 border-[#151206]/10 hover:border-[#9B9144]/40 transition-all bg-transparent"><span class="block text-2xl mb-1">🎉</span><span class="text-[#151206]/70 text-xs font-medium">Event Coverage</span></button>
+                                        <button type="button" data-session="Something Else" class="session-btn p-3 rounded-xl border-2 border-[#151206]/10 hover:border-[#9B9144]/40 transition-all bg-transparent"><span class="block text-2xl mb-1">✨</span><span class="text-[#151206]/70 text-xs font-medium">Something Else</span></button>
+                                    </div>
+                                    <input type="hidden" id="selectedSession" required>
+                                </div>
+                                <div>
+                                    <label class="block text-[#151206]/70 text-xs uppercase tracking-wider mb-2">Preferred Date</label>
+                                    <input type="date" id="preferredDate" class="w-full bg-transparent border-b-2 border-[#151206]/10 pb-2 text-[#151206] text-lg font-light focus:border-[#9B9144] outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-[#151206]/70 text-xs uppercase tracking-wider mb-2">Your Vision</label>
+                                    <textarea id="visionMsg" rows="3" placeholder="Tell me about the mood, location, or style you're dreaming of..." class="w-full bg-transparent border-b-2 border-[#151206]/10 pb-2 text-[#151206] text-lg font-light placeholder:text-[#151206]/30 focus:border-[#9B9144] outline-none resize-none"></textarea>
+                                </div>
+                                <button type="submit" class="group w-full py-5 bg-[#151206] text-[#F4F1EC] rounded-xl overflow-hidden transition-all hover:shadow-xl relative text-sm uppercase tracking-wider font-medium">Send Request<svg class="inline ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></button>
+                        </form>
+                    </div>
+                    <!-- Contact info -->
+                    <div class="lg:col-span-2 flex flex-col justify-between">
+                        <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-[#9B9144]/10 shadow-sm">
+                            <h3 class="text-[#151206] text-2xl font-light mb-6">Get in Touch</h3>
+                            <div class="space-y-5">
+                                <a href="mailto:anya.artistphotographer@gmail.com" class="flex items-start gap-4 p-3 rounded-xl hover:bg-[#9B9144]/5 transition-all group">
+                                    <div class="w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center group-hover:bg-[#9B9144]/20"><svg class="w-5 h-5 text-[#9B9144]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
+                                    <div><p class="text-[#151206]/50 text-[0.7rem] uppercase tracking-wider">Email</p><p class="text-[#151206] group-hover:text-[#9B9144] transition">anya.artistphotographer@gmail.com</p></div>
+                                </a>
+                                <a href="https://www.instagram.com/anya.artistphotographer" target="_blank" class="flex items-start gap-4 p-3 rounded-xl hover:bg-[#9B9144]/5 transition-all group">
+                                    <div class="w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center group-hover:bg-[#9B9144]/20"><svg class="w-5 h-5 text-[#9B9144]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8z"/></svg></div>
+                                    <div><p class="text-[#151206]/50 text-[0.7rem] uppercase tracking-wider">Instagram</p><p class="text-[#151206] group-hover:text-[#9B9144] transition">@anya.artistphotographer</p></div>
+                                </a>
+                                <div class="flex items-start gap-4 p-3"><div class="w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center"><svg class="w-5 h-5 text-[#9B9144]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div><div><p class="text-[#151206]/50 text-[0.7rem] uppercase tracking-wider">Location</p><p class="text-[#151206]">Toronto & GTA, Ontario</p></div></div>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex items-center gap-3 px-4 py-2 bg-[#9B9144]/5 rounded-full w-fit"><span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9B9144]/60"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#9B9144]"></span></span><span class="text-[#151206]/60 text-xs">Usually responds within 24 hours</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="px-6 py-20 md:py-24 text-center">
+        <div class="max-w-[1400px] mx-auto"><span class="text-[#9B9144] text-sm md:text-base tracking-[0.15em] font-light">© 2025 Anya Stsetskevich</span></div>
+    </footer>
 
-  </div>
-</section>
+    <script>
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        function closeMobileMenu() { mobileMenu.classList.remove('mobile-menu-open'); mobileMenu.style.maxHeight = '0'; mobileMenu.style.opacity = '0'; }
+        menuBtn.addEventListener('click', () => {
+            if(mobileMenu.classList.contains('mobile-menu-open')) {
+                mobileMenu.classList.remove('mobile-menu-open');
+                mobileMenu.style.maxHeight = '0';
+                mobileMenu.style.opacity = '0';
+            } else {
+                mobileMenu.classList.add('mobile-menu-open');
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                mobileMenu.style.opacity = '1';
+            }
+        });
+        window.scrollToSection = function(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
 
-<section id="about" class="about">
-  <h2>ABOUT</h2>
+        // session type selection
+        let selectedSessionValue = '';
+        const sessionBtns = document.querySelectorAll('.session-btn');
+        const sessionHidden = document.getElementById('selectedSession');
+        sessionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                sessionBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedSessionValue = btn.getAttribute('data-session');
+                sessionHidden.value = selectedSessionValue;
+            });
+        });
 
-  <p>
-    Capturing people and moments with honesty, warmth, and emotion.
-  </p>
-
-  <p>
-    This portfolio focuses on natural expression, real feelings, and authentic storytelling.
-    Every session is a collaboration.
-  </p>
-
-  <p>
-    Photography based on real human connection and everyday beauty.
-  </p>
-</section>
-
-<section id="contact">
-  <h2>CONTACT</h2>
-
-  <div class="contact">
-    <input placeholder="Your name" />
-    <input placeholder="Email" />
-    <textarea rows="5" placeholder="Your message"></textarea>
-    <button style="
-      padding:12px 20px;
-      background:#151206;
-      color:white;
-      border:none;
-      border-radius:8px;
-      cursor:pointer;">
-      Send
-    </button>
-  </div>
-</section>
-
-<footer>
-  © 2026 Photography Portfolio Clone
-</footer>
-
-<script>
-function scrollToSection(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
-
-window.addEventListener("scroll", () => {
-  const nav = document.getElementById("nav");
-  if(window.scrollY > 50){
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
-});
-</script>
-
+        // form submission handling (dummy)
+        const form = document.getElementById('bookingForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('nameInput').value.trim();
+            const email = document.getElementById('emailInput').value.trim();
+            if(!name || !email) { alert("Please fill in your name and email."); return; }
+            if(!selectedSessionValue) { alert("Please select a session type."); return; }
+            alert(`Thank you ${name}! Your session request (${selectedSessionValue}) has been sent.\nAnya will reply within 24 hours.`);
+            form.reset();
+            sessionBtns.forEach(b => b.classList.remove('active'));
+            selectedSessionValue = '';
+            sessionHidden.value = '';
+        });
+    </script>
 </body>
 </html>
