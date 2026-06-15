@@ -6,6 +6,7 @@
     <title>Anya Stsetskevich · Honest & Emotional Photography</title>
     <meta name="description" content="Portrait, street and pet photographer based in Toronto & GTA.">
     <style>
+        /*! ПРИВЕДЕНИЕ СТИЛЕЙ В ТОЧНОСТЬ К ОРИГИНАЛУ (atoms.dev) */
         * {
             margin: 0;
             padding: 0;
@@ -24,7 +25,7 @@
             background: #9B9144;
             color: #F4F1EC;
         }
-        /* animation */
+        /* анимации fade-up */
         @keyframes fadeUp {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -34,14 +35,13 @@
         }
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
-
-        /* mobile menu */
-        .mobile-menu-open {
+        /* мобильное меню */
+        .mobile-open {
             max-height: 380px !important;
             opacity: 1 !important;
             visibility: visible !important;
         }
-        /* navbar scrolled */
+        /* навигация при скролле */
         .navbar.scrolled {
             background-color: #F4F1EC !important;
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
@@ -50,7 +50,7 @@
         .navbar.scrolled button {
             color: #151206 !important;
         }
-        /* session button active */
+        /* активная кнопка типа сессии */
         .session-btn.active {
             border-color: #9B9144 !important;
             background-color: rgba(155, 145, 68, 0.08) !important;
@@ -59,7 +59,7 @@
             color: #9B9144 !important;
             font-weight: 500;
         }
-        /* placeholder for images */
+        /* заглушка для изображений (сохраняем пропорции 3:4) */
         .img-placeholder {
             background-color: #E8E6E0;
             display: flex;
@@ -76,7 +76,7 @@
             background-color: #DFD9CF;
             transition: background-color 0.3s ease;
         }
-        /* container */
+        /* контейнеры */
         .container-portfolio {
             max-width: 1100px;
             margin: 0 auto;
@@ -90,31 +90,19 @@
             padding-right: 1.5rem;
         }
         @media (min-width: 768px) {
-            .container-portfolio {
-                padding-left: 3rem;
-                padding-right: 3rem;
-            }
-            .container-about {
-                padding-left: 3rem;
-                padding-right: 3rem;
-            }
+            .container-portfolio { padding-left: 3rem; padding-right: 3rem; }
+            .container-about { padding-left: 3rem; padding-right: 3rem; }
         }
         @media (min-width: 1024px) {
-            .container-portfolio {
-                padding-left: 5rem;
-                padding-right: 5rem;
-            }
-            .container-about {
-                padding-left: 5rem;
-                padding-right: 5rem;
-            }
+            .container-portfolio { padding-left: 5rem; padding-right: 5rem; }
+            .container-about { padding-left: 5rem; padding-right: 5rem; }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- НАВИГАЦИЯ (точная копия) -->
 <nav class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-[1200ms] bg-transparent" id="navbar">
     <div class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-8 md:px-12 lg:px-20">
         <a href="#" class="transition-colors duration-[1200ms] text-[#F4F1EC]" style="font-size: 18px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; line-height: 1.5;">Anya Stsetskevich</a>
@@ -137,7 +125,7 @@
 </nav>
 
 <main>
-    <!-- Hero Section -->
+    <!-- HERO СЕКЦИЯ (точная копия) -->
     <section class="relative w-full overflow-hidden bg-[#151206]" style="height: 45vh; min-height: 320px;">
         <div class="absolute inset-0">
             <div class="h-full w-full bg-[#2a2610] opacity-60"></div>
@@ -152,48 +140,48 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- ПОРТФОЛИО -->
     <section id="portfolio" class="bg-[#F4F1EC] py-16 md:py-24">
         <div class="container-portfolio">
             <div class="fade-up"><p class="mb-14 text-[#9B9144] uppercase tracking-[0.25em]" style="font-size: 1.3rem; font-weight: 400;">Work</p></div>
 
-            <!-- Portrait -->
+            <!-- Portrait Photography -->
             <div class="mb-16 md:mb-24">
                 <div class="fade-up"><p class="mb-8 md:mb-12 text-[#312F07] uppercase tracking-[0.18em]" style="font-size: 1.4rem; font-weight: 400;">Portrait Photography</p></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Street Portrait Compilation</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Yozefa Stsiatskevich</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Kayla</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Naveed</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Selv</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Chris</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Street Portrait Compilation</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Yozefa Stsiatskevich</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Kayla</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Naveed</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Selv</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Chris</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
                 </div>
             </div>
 
-            <!-- Family -->
+            <!-- Family Photography -->
             <div class="mb-16 md:mb-24">
                 <div class="fade-up"><p class="mb-8 md:mb-12 text-[#312F07] uppercase tracking-[0.18em]" style="font-size: 1.4rem; font-weight: 400;">Family Photography</p></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Engagement Photography</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">McLaren</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Natalia Hordynska</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Nyguven</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Erika and Zhenia</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Engagement Photography</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">McLaren</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Natalia Hordynska</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Nyguven</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Erika and Zhenia</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
                 </div>
             </div>
 
-            <!-- Pets -->
+            <!-- Pets Photography -->
             <div>
                 <div class="fade-up"><p class="mb-8 md:mb-12 text-[#312F07] uppercase tracking-[0.18em]" style="font-size: 1.4rem; font-weight: 400;">Pets Photography</p></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Ozër</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2023</span></div></a></div>
-                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex items-baseline flex-wrap"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Charlie</span><span class="ml-3 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2023</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Ozër</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2023</span></div></a></div>
+                    <div class="group"><a href="#"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em;">Charlie</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2023</span></div></a></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ABOUT (точная копия) -->
     <section id="about" class="py-32 md:py-40">
         <div class="container-about">
             <div class="fade-up">
@@ -231,7 +219,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- CONTACT (точная копия) -->
     <section id="contact" class="relative bg-[#F4F1EC] py-28 md:py-36 overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#9B9144]/20 to-transparent"></div>
         <div class="relative mx-auto max-w-[1100px] px-6 md:px-12 lg:px-20">
@@ -276,18 +264,19 @@
 </footer>
 
 <script>
+    // Мобильное меню
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     function closeMobileMenu() {
-        mobileMenu.classList.remove('mobile-menu-open');
+        mobileMenu.classList.remove('mobile-open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
         mobileMenu.style.visibility = 'hidden';
     }
     menuBtn.addEventListener('click', () => {
-        if(mobileMenu.classList.contains('mobile-menu-open')) closeMobileMenu();
+        if(mobileMenu.classList.contains('mobile-open')) closeMobileMenu();
         else {
-            mobileMenu.classList.add('mobile-menu-open');
+            mobileMenu.classList.add('mobile-open');
             mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
             mobileMenu.style.opacity = '1';
             mobileMenu.style.visibility = 'visible';
@@ -297,11 +286,13 @@
         document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
         closeMobileMenu();
     };
+    // Смена цвета навбара при скролле
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if(window.scrollY > 50) navbar.classList.add('scrolled');
         else navbar.classList.remove('scrolled');
     });
+    // Выбор типа сессии
     let selectedSession = '';
     const btns = document.querySelectorAll('.session-btn');
     const hiddenSession = document.getElementById('selectedSession');
@@ -313,14 +304,15 @@
             hiddenSession.value = selectedSession;
         });
     });
+    // Отправка формы
     const form = document.getElementById('bookingForm');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.getElementById('nameInput').value.trim();
         const email = document.getElementById('emailInput').value.trim();
-        if(!name || !email) { alert("Please fill in name and email."); return; }
+        if(!name || !email) { alert("Please fill in your name and email."); return; }
         if(!selectedSession) { alert("Please select a session type."); return; }
-        alert(`Thank you ${name}! Your ${selectedSession} request sent. Anya will reply within 24h.`);
+        alert(`Thank you ${name}! Your ${selectedSession} request has been sent.\nAnya will reply within 24 hours.`);
         form.reset();
         btns.forEach(b => b.classList.remove('active'));
         selectedSession = '';
