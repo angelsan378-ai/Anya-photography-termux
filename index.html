@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Grid — Anya Stsetskevich</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Anya Stsetskevich – Photography</title>
     <style>
         * {
             margin: 0;
@@ -13,14 +13,104 @@
         body {
             background-color: #F4F1EC;
             font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            color: #151206;
         }
-        /* контейнер — такой же, как на оригинальном сайте */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* -------------------- НАВИГАЦИЯ И HERO -------------------- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+            background: transparent;
+        }
+        .navbar.scrolled {
+            background-color: #F4F1EC;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        .navbar.scrolled a,
+        .navbar.scrolled button {
+            color: #151206 !important;
+        }
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .container-wide { padding: 0 3rem; }
+        }
+        @media (min-width: 1024px) {
+            .container-wide { padding: 0 5rem; }
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: #151206;
+            height: 45vh;
+            min-height: 320px;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-color: #2a2610;
+            opacity: 0.6;
+        }
+        .hero-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, #151206/60, transparent);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 2rem;
+            padding-left: 8%;
+            padding-right: 40%;
+        }
+        @media (min-width: 768px) {
+            .hero-content {
+                padding-left: 12%;
+                padding-right: 45%;
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-content {
+                padding-left: 20%;
+                padding-right: 50%;
+            }
+        }
+        .hero-title {
+            color: #F4F1EC;
+            font-size: 80px;
+            font-weight: 200;
+            letter-spacing: 0.15em;
+            line-height: 1.1;
+        }
+        .hero-sub {
+            color: #DFD480/60;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            font-size: clamp(2rem, 2.6vw, 2.6rem);
+            font-weight: 300;
+            margin-top: 1rem;
+        }
+
+        /* -------------------- ПОРТФОЛИО (ЗАКРЕПЛЁННАЯ СЕТКА) -------------------- */
         .portfolio-container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
         }
-        /* заголовок Work */
         .work-label {
             font-size: 1.3rem;
             font-weight: 400;
@@ -29,7 +119,6 @@
             color: #9B9144;
             margin-bottom: 2.5rem;
         }
-        /* заголовок секции */
         .section-title {
             font-size: 1.4rem;
             font-weight: 400;
@@ -38,18 +127,15 @@
             color: #312F07;
             margin-bottom: 1.8rem;
         }
-        /* СЕТКА: две колонки, как в оригинале */
         .grid-two {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2.5rem; /* такой же gap как на скриншоте */
+            gap: 2.5rem;
         }
-        /* карточка */
         .card {
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        /* место для фото — пропорция 3:4 */
         .card-image {
             aspect-ratio: 3 / 4;
             background-color: #E8E6E0;
@@ -67,7 +153,6 @@
             transform: scale(1.02);
             background-color: #DFD9CF;
         }
-        /* подпись: название и год на одной строке */
         .card-caption {
             margin-top: 1rem;
             display: flex;
@@ -91,11 +176,9 @@
             letter-spacing: 0.05em;
             color: #9B9144;
         }
-        /* отступы между секциями */
         .portfolio-section {
             margin-bottom: 3rem;
         }
-        /* на мобильных — одна колонка */
         @media (max-width: 768px) {
             .grid-two {
                 grid-template-columns: 1fr;
@@ -105,10 +188,54 @@
                 padding: 1rem 1rem;
             }
         }
+
+        /* -------------------- ОСТАЛЬНЫЕ СЕКЦИИ (ВРЕМЕННЫЕ ЗАГОЛОВКИ) -------------------- */
+        .coming-soon {
+            text-align: center;
+            padding: 4rem 1rem;
+            color: #9B9144;
+            font-size: 1.2rem;
+            border-top: 1px solid #9B9144/20;
+            margin-top: 2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #9B9144;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- НАВИГАЦИЯ -->
+<nav class="navbar" id="navbar">
+    <div class="container-wide" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; padding-bottom: 1.5rem;">
+        <a href="#" style="font-size: 18px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: #F4F1EC; text-decoration: none;">Anya Stsetskevich</a>
+        <div style="display: flex; gap: 3rem;">
+            <button onclick="scrollToSection('portfolio')" style="background: none; border: none; color: #F4F1EC/80; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.22em; cursor: pointer;">Work</button>
+            <button onclick="scrollToSection('about')" style="background: none; border: none; color: #F4F1EC/80; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.22em; cursor: pointer;">About</button>
+            <button onclick="scrollToSection('contact')" style="background: none; border: none; color: #F4F1EC/80; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.22em; cursor: pointer;">Contact</button>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO СЕКЦИЯ -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+        <div>
+            <div class="hero-title">Anya Stsetskevich</div>
+            <div class="hero-sub">Photography</div>
+        </div>
+    </div>
+</section>
+
+<!-- ПОРТФОЛИО (ЗАКРЕПЛЁННАЯ СЕТКА) -->
+<section id="portfolio">
     <div class="portfolio-container">
         <div class="work-label">Work</div>
 
@@ -116,48 +243,12 @@
         <div class="portfolio-section">
             <div class="section-title">Portrait Photography</div>
             <div class="grid-two">
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Street Portrait Compilation</span>
-                        <span class="card-year">2025</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Yozefa Stsiatskevich</span>
-                        <span class="card-year">2024</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Kayla</span>
-                        <span class="card-year">2025</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Naveed</span>
-                        <span class="card-year">2025</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Selv</span>
-                        <span class="card-year">2025</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Chris</span>
-                        <span class="card-year">2025</span>
-                    </div>
-                </div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Street Portrait Compilation</span><span class="card-year">2025</span></div></div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Yozefa Stsiatskevich</span><span class="card-year">2024</span></div></div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Kayla</span><span class="card-year">2025</span></div></div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Naveed</span><span class="card-year">2025</span></div></div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Selv</span><span class="card-year">2025</span></div></div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Chris</span><span class="card-year">2025</span></div></div>
             </div>
         </div>
 
@@ -165,41 +256,11 @@
         <div class="portfolio-section">
             <div class="section-title">Family Photography</div>
             <div class="grid-two">
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Engagement Photography</span>
-                        <span class="card-year">2025</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">McLaren</span>
-                        <span class="card-year">2025</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Natalia Hordynska</span>
-                        <span class="card-year">2024</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Nyguven</span>
-                        <span class="card-year">2024</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Erika and Zhenia</span>
-                        <span class="card-year">2025</span>
-                    </div>
-                </div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Engagement Photography</span><span class="card-year">2025</span></div></div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">McLaren</span><span class="card-year">2025</span></div></div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Natalia Hordynska</span><span class="card-year">2024</span></div></div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Nyguven</span><span class="card-year">2024</span></div></div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Erika and Zhenia</span><span class="card-year">2025</span></div></div>
             </div>
         </div>
 
@@ -207,22 +268,33 @@
         <div class="portfolio-section">
             <div class="section-title">Pets Photography</div>
             <div class="grid-two">
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Ozër</span>
-                        <span class="card-year">2023</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Your image here</div>
-                    <div class="card-caption">
-                        <span class="card-title">Charlie</span>
-                        <span class="card-year">2023</span>
-                    </div>
-                </div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Ozër</span><span class="card-year">2023</span></div></div>
+                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Charlie</span><span class="card-year">2023</span></div></div>
             </div>
         </div>
     </div>
+</section>
+
+<!-- ВРЕМЕННЫЕ СЕКЦИИ (чтобы было куда скроллить) -->
+<section id="about" class="coming-soon">About section — скоро добавим</section>
+<section id="contact" class="coming-soon">Contact section — скоро добавим</section>
+
+<footer>
+    © 2025 Anya Stsetskevich
+</footer>
+
+<script>
+    // Навбар при скролле
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+    });
+    // Скролл к секциям
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+    window.scrollToSection = scrollToSection;
+</script>
 </body>
 </html>
