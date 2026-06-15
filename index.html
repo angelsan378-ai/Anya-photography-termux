@@ -1,25 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anya Photography</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f1ec;
+      color: #151206;
+    }
+
+    header {
+      height: 60vh;
+      background: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e') center/cover;
+      display: flex;
+      align-items: end;
+      padding: 40px;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h2 {
+      color: #9b9144;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card p {
+      padding: 10px;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .about {
+      line-height: 1.6;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Anya Photography</h1>
 
-  <h2>Galleries</h2>
+<header>
+  <div>
+    <h1>Anya Photography</h1>
+    <p>Portrait • Street • Pets</p>
+  </div>
+</header>
 
-  <ul>
-    <li>Engagement</li>
-    <li>McLaren</li>
-    <li>Natalia Hordynska</li>
-    <li>Charlie</li>
-    <li>Chris</li>
-    <li>Kayla</li>
-    <li>Street Portrait</li>
-    <li>Yozefa</li>
-  </ul>
+<section>
+  <h2>Work</h2>
+
+  <div class="grid">
+    <div class="card"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"><p>Portrait</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"><p>Street</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9"><p>Pets</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>About</h2>
+  <p class="about">
+    I am a photographer focused on capturing real emotions, natural light, and authentic moments.
+    My work includes portraits, street photography, and pet sessions.
+  </p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+</section>
+
+<footer>
+  © 2025 Anya Photography
+</footer>
 
 </body>
 </html>
