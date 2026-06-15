@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Anya Stsetskevich – Photography</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Grid — Anya Stsetskevich</title>
     <style>
         * {
             margin: 0;
@@ -13,292 +13,216 @@
         body {
             background-color: #F4F1EC;
             font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-            color: #151206;
-            line-height: 1.4;
         }
-        /* контейнеры */
-        .container {
+        /* контейнер — такой же, как на оригинальном сайте */
+        .portfolio-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 2rem 1.5rem;
         }
-        .container-wide {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        @media (min-width: 768px) {
-            .container { padding: 0 3rem; }
-            .container-wide { padding: 0 3rem; }
-        }
-        @media (min-width: 1024px) {
-            .container { padding: 0 5rem; }
-            .container-wide { padding: 0 5rem; }
-        }
-        /* анимации */
-        @keyframes fadeUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .fade-up {
-            animation: fadeUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-        }
-        /* мобильное меню */
-        .mobile-menu {
-            transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-            max-height: 0;
-            opacity: 0;
-            visibility: hidden;
-            overflow: hidden;
-        }
-        .mobile-menu.open {
-            max-height: 400px;
-            opacity: 1;
-            visibility: visible;
-        }
-        /* навбар при скролле */
-        .navbar.scrolled {
-            background: #F4F1EC;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .navbar.scrolled a,
-        .navbar.scrolled button {
-            color: #151206 !important;
-        }
-        /* кнопки типа сессии */
-        .session-btn.active {
-            border-color: #9B9144 !important;
-            background-color: rgba(155, 145, 68, 0.08);
-        }
-        .session-btn.active span:last-child {
-            color: #9B9144;
-        }
-        /* заглушки для изображений */
-        .img-placeholder {
-            background-color: #E2DED6;
-            aspect-ratio: 3 / 4;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9B9144;
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
+        /* заголовок Work */
+        .work-label {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
+            color: #9B9144;
+            margin-bottom: 2.5rem;
         }
-        .photographer-placeholder {
-            background-color: #E2DED6;
-            aspect-ratio: 3 / 2;
-            width: 100%;
+        /* заголовок секции */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #312F07;
+            margin-bottom: 1.8rem;
+        }
+        /* СЕТКА: две колонки, как в оригинале */
+        .grid-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem; /* такой же gap как на скриншоте */
+        }
+        /* карточка */
+        .card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        /* место для фото — пропорция 3:4 */
+        .card-image {
+            aspect-ratio: 3 / 4;
+            background-color: #E8E6E0;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #9B9144;
             font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            width: 100%;
+            transition: transform 0.4s ease, background-color 0.3s;
         }
-        /* общие */
-        .group:hover .img-placeholder {
-            background-color: #D4CFC4;
+        .card:hover .card-image {
+            transform: scale(1.02);
+            background-color: #DFD9CF;
+        }
+        /* подпись: название и год на одной строке */
+        .card-caption {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            color: #151206;
+            transition: color 0.3s;
+        }
+        .card:hover .card-title {
+            color: #9B9144;
+        }
+        .card-year {
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            color: #9B9144;
+        }
+        /* отступы между секциями */
+        .portfolio-section {
+            margin-bottom: 3rem;
+        }
+        /* на мобильных — одна колонка */
+        @media (max-width: 768px) {
+            .grid-two {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .portfolio-container {
+                padding: 1rem 1rem;
+            }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="portfolio-container">
+        <div class="work-label">Work</div>
 
-<!-- Navigation -->
-<nav class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-700 bg-transparent" id="navbar">
-    <div class="container-wide flex justify-between items-center py-6 md:py-8">
-        <a href="#" class="text-[#F4F1EC] text-lg md:text-xl tracking-[0.22em] uppercase font-light transition-colors hover:text-[#DFD480]">Anya Stsetskevich</a>
-        <div class="hidden md:flex gap-12">
-            <button onclick="scrollToSection('portfolio')" class="text-[#F4F1EC]/80 hover:text-[#DFD480] text-sm uppercase tracking-[0.22em]">Work</button>
-            <button onclick="scrollToSection('about')" class="text-[#F4F1EC]/80 hover:text-[#DFD480] text-sm uppercase tracking-[0.22em]">About</button>
-            <button onclick="scrollToSection('contact')" class="text-[#F4F1EC]/80 hover:text-[#DFD480] text-sm uppercase tracking-[0.22em]">Contact</button>
-        </div>
-        <button id="menuToggle" class="md:hidden text-[#F4F1EC]">
-            <svg width="24" height="14" viewBox="0 0 18 12" fill="currentColor"><rect width="18" height="0.75" y="0"/><rect width="12" height="0.75" y="5.625"/><rect width="18" height="0.75" y="11.25"/></svg>
-        </button>
-    </div>
-    <div id="mobileMenu" class="mobile-menu md:hidden bg-[#F4F1EC]">
-        <div class="flex flex-col items-center gap-8 py-8">
-            <button onclick="scrollToSection('portfolio'); closeMenu()" class="text-[#686025] text-base uppercase tracking-[0.22em]">Work</button>
-            <button onclick="scrollToSection('about'); closeMenu()" class="text-[#686025] text-base uppercase tracking-[0.22em]">About</button>
-            <button onclick="scrollToSection('contact'); closeMenu()" class="text-[#686025] text-base uppercase tracking-[0.22em]">Contact</button>
-        </div>
-    </div>
-</nav>
-
-<main>
-    <!-- Hero -->
-    <section class="relative w-full bg-[#151206]" style="height: 45vh; min-height: 320px;">
-        <div class="absolute inset-0 bg-[#1e1b0f] opacity-60"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#151206]/70 via-transparent to-transparent"></div>
-        <div class="relative z-10 h-full flex items-end pb-12 pl-8 pr-[40%] md:pl-16 md:pr-[45%] lg:pl-20 lg:pr-[50%]">
-            <div>
-                <h1 class="text-[#F4F1EC] text-7xl md:text-8xl font-[200] tracking-[0.15em] leading-[1.1] fade-up">Anya Stsetskevich</h1>
-                <p class="text-[#DFD480]/70 uppercase tracking-[0.4em] text-sm md:text-base font-light mt-3 fade-up delay-100">Photography</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section id="portfolio" class="py-16 md:py-24">
-        <div class="container">
-            <div class="fade-up"><p class="text-[#9B9144] uppercase tracking-[0.25em] text-lg mb-12">Work</p></div>
-
-            <!-- Portrait -->
-            <div class="mb-16 md:mb-24">
-                <div class="fade-up"><p class="text-[#312F07] uppercase tracking-[0.18em] text-xl mb-8 md:mb-12">Portrait Photography</p></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-14">
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Street Portrait Compilation</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></div>
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Yozefa Stsiatskevich</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2024</span></div></div>
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Kayla</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></div>
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Naveed</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></div>
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Selv</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></div>
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Chris</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></div>
-                </div>
-            </div>
-
-            <!-- Family -->
-            <div class="mb-16 md:mb-24">
-                <div class="fade-up"><p class="text-[#312F07] uppercase tracking-[0.18em] text-xl mb-8 md:mb-12">Family Photography</p></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-14">
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Engagement Photography</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></div>
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">McLaren</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></div>
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Natalia Hordynska</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2024</span></div></div>
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Nyguven</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2024</span></div></div>
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Erika and Zhenia</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2025</span></div></div>
-                </div>
-            </div>
-
-            <!-- Pets -->
-            <div>
-                <div class="fade-up"><p class="text-[#312F07] uppercase tracking-[0.18em] text-xl mb-8 md:mb-12">Pets Photography</p></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-14">
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Ozër</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2023</span></div></div>
-                    <div class="group"><div class="overflow-hidden"><div class="img-placeholder">Your image here</div></div><div class="mt-4 flex flex-wrap items-baseline"><span class="text-[#151206] text-xl font-light tracking-wide group-hover:text-[#9B9144] transition">Charlie</span><span class="ml-3 text-[#9B9144] text-sm font-light tracking-wider">2023</span></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="py-24 md:py-32">
-        <div class="container-wide">
-            <div class="fade-up flex justify-between items-baseline border-b border-[#9B9144]/30 pb-5 mb-12">
-                <p class="text-[#9B9144] uppercase tracking-[0.35em] text-base">About</p>
-                <p class="text-[#9B9144]/50 tracking-[0.15em] text-xs hidden md:block">Toronto &amp; GTA · Portrait · Street · Pets</p>
-            </div>
-            <div class="fade-up">
-                <h2 class="text-[#151206] text-5xl md:text-7xl font-[200] leading-[1.2] tracking-[-0.02em] mb-12">Capturing people and moments<br><span class="text-[#9B9144]">with honesty, warmth,</span><br>and emotion.</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12 mb-16">
-                <p class="text-[#151206] text-lg md:text-xl font-light leading-relaxed">Anya Stsetsevich is a portrait, street, and pet photographer based in Toronto and the GTA. Her work is centered around the beauty of natural expression — the unfiltered laughter, quiet vulnerability, spontaneous movement, and small details that make every person and every story unique.</p>
-                <p class="text-[#151206] text-lg md:text-xl font-light leading-relaxed">Rather than creating perfect images, Anya focuses on preserving real feelings and genuine connection exactly as they are. Inspired by everyday life and human stories, she creates photographs that feel alive, personal, and timeless — images that hold emotion long after the moment has passed.</p>
-            </div>
-            <div class="flex items-center gap-6 my-12">
-                <div class="flex-1 h-px bg-[#9B9144]/20"></div>
-                <p class="text-[#686025] italic text-xl md:text-2xl font-light">"Here will be a phrase."</p>
-                <div class="flex-1 h-px bg-[#9B9144]/20"></div>
-            </div>
-            <div class="mb-16 max-w-3xl">
-                <p class="text-[#151206]/70 text-base md:text-lg font-light leading-relaxed">Every session is a collaboration — a space where people can be themselves, feel comfortable, and let their true personality shine through. Whether it's a family gathering, a quiet portrait, a playful pet, or a fleeting street moment, the goal is always the same: to tell your story with authenticity and care.</p>
-            </div>
-            <div>
-                <div class="flex items-baseline gap-4 mb-4"><span class="text-[#9B9144] uppercase tracking-[0.3em] text-xs">Photographer</span><div class="flex-1 h-px bg-[#9B9144]/15"></div><span class="text-[#9B9144]/60 tracking-[0.2em] text-xs">Anya Stsetsevich</span></div>
-                <div class="overflow-hidden group"><div class="photographer-placeholder">Your photo here</div></div>
-            </div>
-            <div class="flex justify-center mt-16">
-                <button onclick="scrollToSection('contact')" class="px-12 py-4 md:px-20 md:py-5 border border-[#9B9144]/40 text-[#9B9144] uppercase tracking-[0.3em] text-sm md:text-base transition-all hover:border-[#9B9144] hover:bg-[#9B9144]/5">Book a Session</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="relative bg-[#F4F1EC] py-24 md:py-32 overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#9B9144]/20 to-transparent"></div>
-        <div class="max-w-[1100px] mx-auto px-6 md:px-12 lg:px-20">
-            <div class="text-center mb-14">
-                <p class="text-[#9B9144] uppercase tracking-[0.4em] text-xs md:text-sm">Let's Create Together</p>
-                <h2 class="text-[#151206] text-4xl md:text-6xl font-[200] tracking-tight mt-3">Book Your Session</h2>
-                <p class="text-[#151206]/60 max-w-lg mx-auto text-base mt-4">Every great photo starts with a conversation. Tell me about your vision and let's bring it to life.</p>
-            </div>
-            <div class="grid lg:grid-cols-5 gap-12">
-                <!-- Form -->
-                <div class="lg:col-span-3">
-                    <form id="contactForm" class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-[#9B9144]/10">
-                        <div class="space-y-6">
-                            <div><label class="block text-[#151206]/70 text-xs uppercase tracking-wider mb-2">Your Name <span class="text-[#9B9144]">*</span></label><input type="text" id="name" required placeholder="How should I address you?" class="w-full bg-transparent border-b border-[#151206]/20 pb-2 text-lg font-light focus:border-[#9B9144] outline-none transition"></div>
-                            <div><label class="block text-[#151206]/70 text-xs uppercase tracking-wider mb-2">Email Address <span class="text-[#9B9144]">*</span></label><input type="email" id="email" required placeholder="your@email.com" class="w-full bg-transparent border-b border-[#151206]/20 pb-2 text-lg font-light focus:border-[#9B9144] outline-none transition"></div>
-                            <div><label class="block text-[#151206]/70 text-xs uppercase tracking-wider mb-3">Type of Session <span class="text-[#9B9144]">*</span></label><div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="sessionGroup"><button type="button" data-session="Portrait Session" class="session-btn p-3 rounded-xl border border-[#151206]/15 hover:border-[#9B9144]/40 transition"><span class="block text-xl">🎭</span><span class="block text-xs text-[#151206]/70">Portrait Session</span></button><button type="button" data-session="Street Photography" class="session-btn p-3 rounded-xl border border-[#151206]/15 hover:border-[#9B9144]/40 transition"><span class="block text-xl">🏙️</span><span class="block text-xs text-[#151206]/70">Street Photography</span></button><button type="button" data-session="Pet Photography" class="session-btn p-3 rounded-xl border border-[#151206]/15 hover:border-[#9B9144]/40 transition"><span class="block text-xl">🐾</span><span class="block text-xs text-[#151206]/70">Pet Photography</span></button><button type="button" data-session="Family Session" class="session-btn p-3 rounded-xl border border-[#151206]/15 hover:border-[#9B9144]/40 transition"><span class="block text-xl">👨‍👩‍👧</span><span class="block text-xs text-[#151206]/70">Family Session</span></button><button type="button" data-session="Event Coverage" class="session-btn p-3 rounded-xl border border-[#151206]/15 hover:border-[#9B9144]/40 transition"><span class="block text-xl">🎉</span><span class="block text-xs text-[#151206]/70">Event Coverage</span></button><button type="button" data-session="Something Else" class="session-btn p-3 rounded-xl border border-[#151206]/15 hover:border-[#9B9144]/40 transition"><span class="block text-xl">✨</span><span class="block text-xs text-[#151206]/70">Something Else</span></button></div><input type="hidden" id="selectedSession"></div>
-                            <div><label class="block text-[#151206]/70 text-xs uppercase tracking-wider mb-2">Preferred Date</label><input type="date" id="preferredDate" class="w-full bg-transparent border-b border-[#151206]/20 pb-2 text-lg font-light focus:border-[#9B9144] outline-none transition"></div>
-                            <div><label class="block text-[#151206]/70 text-xs uppercase tracking-wider mb-2">Your Vision</label><textarea id="vision" rows="3" placeholder="Tell me about the mood, location, or style you're dreaming of..." class="w-full bg-transparent border-b border-[#151206]/20 pb-2 text-lg font-light placeholder:text-[#151206]/30 focus:border-[#9B9144] outline-none resize-none"></textarea></div>
-                            <button type="submit" class="w-full py-4 bg-[#151206] text-[#F4F1EC] rounded-xl hover:shadow-md transition text-sm uppercase tracking-wider">Send Request →</button>
-                        </div>
-                    </form>
-                </div>
-                <!-- Contact Info -->
-                <div class="lg:col-span-2 flex flex-col justify-between">
-                    <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-[#9B9144]/10">
-                        <h3 class="text-[#151206] text-2xl font-light mb-5">Get in Touch</h3>
-                        <div class="space-y-5">
-                            <a href="mailto:anya.artistphotographer@gmail.com" class="flex gap-4 p-2 rounded-xl hover:bg-[#9B9144]/5 transition"><div class="w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center"><svg class="w-5 h-5 text-[#9B9144]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25"/></svg></div><div><p class="text-[#151206]/50 text-[0.7rem] uppercase tracking-wider">Email</p><p class="text-[#151206]">anya.artistphotographer@gmail.com</p></div></a>
-                            <a href="https://www.instagram.com/anya.artistphotographer" target="_blank" class="flex gap-4 p-2 rounded-xl hover:bg-[#9B9144]/5 transition"><div class="w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center"><svg class="w-5 h-5 text-[#9B9144]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0z"/></svg></div><div><p class="text-[#151206]/50 text-[0.7rem] uppercase tracking-wider">Instagram</p><p class="text-[#151206]">@anya.artistphotographer</p></div></a>
-                            <div class="flex gap-4 p-2"><div class="w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center"><svg class="w-5 h-5 text-[#9B9144]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div><div><p class="text-[#151206]/50 text-[0.7rem] uppercase tracking-wider">Location</p><p class="text-[#151206]">Toronto &amp; GTA, Ontario</p></div></div>
-                        </div>
+        <!-- Portrait Photography -->
+        <div class="portfolio-section">
+            <div class="section-title">Portrait Photography</div>
+            <div class="grid-two">
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Street Portrait Compilation</span>
+                        <span class="card-year">2025</span>
                     </div>
-                    <div class="mt-6 flex items-center gap-2 px-4 py-2 bg-[#9B9144]/5 rounded-full w-fit"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9B9144]/60"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#9B9144]"></span></span><span class="text-[#151206]/60 text-xs">Usually responds within 24 hours</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Yozefa Stsiatskevich</span>
+                        <span class="card-year">2024</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Kayla</span>
+                        <span class="card-year">2025</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Naveed</span>
+                        <span class="card-year">2025</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Selv</span>
+                        <span class="card-year">2025</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Chris</span>
+                        <span class="card-year">2025</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-</main>
 
-<footer class="py-12 text-center">
-    <div class="container-wide"><span class="text-[#9B9144] text-sm tracking-[0.15em] font-light">© 2025 Anya Stsetskevich</span></div>
-</footer>
+        <!-- Family Photography -->
+        <div class="portfolio-section">
+            <div class="section-title">Family Photography</div>
+            <div class="grid-two">
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Engagement Photography</span>
+                        <span class="card-year">2025</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">McLaren</span>
+                        <span class="card-year">2025</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Natalia Hordynska</span>
+                        <span class="card-year">2024</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Nyguven</span>
+                        <span class="card-year">2024</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Erika and Zhenia</span>
+                        <span class="card-year">2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<script>
-    // Menu
-    const toggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    function closeMenu() { mobileMenu.classList.remove('open'); }
-    toggle.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
-    window.scrollToSection = function(id) {
-        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        closeMenu();
-    };
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if(window.scrollY > 50) navbar.classList.add('scrolled');
-        else navbar.classList.remove('scrolled');
-    });
-    // Session selection
-    let selected = '';
-    const sessionBtns = document.querySelectorAll('.session-btn');
-    const sessionHidden = document.getElementById('selectedSession');
-    sessionBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            sessionBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            selected = btn.getAttribute('data-session');
-            sessionHidden.value = selected;
-        });
-    });
-    // Form submit
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        if(!name || !email) { alert("Please fill in name and email."); return; }
-        if(!selected) { alert("Please select a session type."); return; }
-        alert(`Thank you ${name}! Your ${selected} request has been sent. Anya will reply within 24h.`);
-        form.reset();
-        sessionBtns.forEach(b => b.classList.remove('active'));
-        selected = '';
-        sessionHidden.value = '';
-    });
-</script>
+        <!-- Pets Photography -->
+        <div class="portfolio-section">
+            <div class="section-title">Pets Photography</div>
+            <div class="grid-two">
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Ozër</span>
+                        <span class="card-year">2023</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">Your image here</div>
+                    <div class="card-caption">
+                        <span class="card-title">Charlie</span>
+                        <span class="card-year">2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
