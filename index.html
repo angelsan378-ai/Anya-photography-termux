@@ -1,298 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Anya Stsetskevich · Honest & Emotional Photography</title>
-    <meta name="description" content="Portrait, street and pet photographer based in Toronto & GTA.">
-    <style>
-        /* Reset and base styles — exactly as original */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: #F4F1EC;
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-            color: #151206;
-            overflow-x: hidden;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        ::selection {
-            background: #9B9144;
-            color: #F4F1EC;
-        }
-        /* animations */
-        @keyframes fadeUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .fade-up {
-            animation: fadeUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-        }
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Anya Stsetskevich · Honest & Emotional Photography</title>
+  <meta name="description" content="Portrait, street and pet photographer based in Toronto & GTA. Capturing people and moments with honesty, warmth, and emotion.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* mobile menu */
-        .mobile-menu-open {
-            max-height: 380px !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
+    body {
+      background-color: #F4F1EC;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      color: #151206;
+      overflow-x: hidden;
+    }
 
-        /* navigation scroll effect */
-        .navbar.scrolled {
-            background-color: #F4F1EC !important;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-        }
-        .navbar.scrolled a,
-        .navbar.scrolled button {
-            color: #151206 !important;
-        }
-        .navbar.scrolled .text-\[\#F4F1EC\] {
-            color: #151206 !important;
-        }
-        .navbar.scrolled .text-\[\#F4F1EC\]\/80 {
-            color: #151206 !important;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* session button active state */
-        .session-btn.active {
-            border-color: #9B9144 !important;
-            background-color: rgba(155, 145, 68, 0.08) !important;
-        }
-        .session-btn.active span:last-child {
-            color: #9B9144 !important;
-            font-weight: 500;
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+    ::selection {
+      background: #9B9144;
+      color: #F4F1EC;
+    }
+
+    /* animations */
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    }
+
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+
+    /* mobile menu */
+    .mobile-menu-open {
+      max-height: 380px !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    /* navigation scroll effect */
+    .navbar.scrolled {
+      background-color: #F4F1EC !important;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    }
+
+    .navbar.scrolled a,
+    .navbar.scrolled button {
+      color: #151206 !important;
+    }
+
+    .navbar.scrolled .text-\[\#F4F1EC\] {
+      color: #151206 !important;
+    }
+
+    .navbar.scrolled .text-\[\#F4F1EC\]\/80 {
+      color: #151206 !important;
+    }
+
+    /* session button active state */
+    .session-btn.active {
+      border-color: #9B9144 !important;
+      background-color: rgba(155, 145, 68, 0.08) !important;
+    }
+
+    .session-btn.active span:last-child {
+      color: #9B9144 !important;
+      font-weight: 500;
+    }
+
+    /* container utility */
+    .container-custom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .container-custom {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container-custom {
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+    }
+
+    /* 3:4 placeholder block for images */
+    .portfolio-placeholder {
+      aspect-ratio: 3 / 4;
+      background-color: #E8E6E0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9B9144;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .group:hover .portfolio-placeholder {
+      background-color: #DFD9CF;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navigation — exact replica -->
-    <nav class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] bg-transparent" id="navbar">
-        <div class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-8 md:px-12 lg:px-20">
-            <a class="transition-colors duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] text-[#F4F1EC]" href="#" style="font-size: 18px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; line-height: 1.5;">Anya Stsetskevich</a>
-            <div class="hidden items-center md:flex" style="gap: 3.5rem;">
-                <button onclick="scrollToSection('portfolio')" class="transition-colors duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] hover:text-[#9B9144] text-[#DFD480]/50" style="font-size: 1.3rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">Work</button>
-                <button onclick="scrollToSection('about')" class="transition-colors duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] hover:text-[#9B9144] text-[#DFD480]/50" style="font-size: 1.3rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">About</button>
-                <button onclick="scrollToSection('contact')" class="transition-colors duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] hover:text-[#9B9144] text-[#DFD480]/50" style="font-size: 1.3rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">Contact</button>
-            </div>
-            <button id="menuBtn" class="md:hidden transition-colors duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] text-[#F4F1EC]" aria-label="Toggle menu" style="background: none; border: none; cursor: pointer;">
-                <svg width="24" height="14" viewBox="0 0 18 12" fill="currentColor"><rect width="18" height="0.75" y="0"></rect><rect width="12" height="0.75" y="5.625"></rect><rect width="18" height="0.75" y="11.25"></rect></svg>
-            </button>
+  <!-- Navigation -->
+  <nav class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] bg-transparent" id="navbar">
+    <div class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-8 md:px-12 lg:px-20">
+      <a class="transition-colors duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] text-[#F4F1EC]" href="#" style="font-size: 18px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; line-height: 1.5;">Anya Stsetskevich</a>
+      <div class="hidden items-center md:flex" style="gap: 3.5rem;">
+        <button onclick="scrollToSection('portfolio')" class="transition-colors duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] hover:text-[#9B9144] text-[#DFD480]/50" style="font-size: 1.3rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">Work</button>
+        <button onclick="scrollToSection('about')" class="transition-colors duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] hover:text-[#9B9144] text-[#DFD480]/50" style="font-size: 1.3rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">About</button>
+        <button onclick="scrollToSection('contact')" class="transition-colors duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] hover:text-[#9B9144] text-[#DFD480]/50" style="font-size: 1.3rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">Contact</button>
+      </div>
+      <button id="menuBtn" class="md:hidden transition-colors duration-[1200ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] text-[#F4F1EC]" aria-label="Toggle menu" style="background: none; border: none; cursor: pointer;">
+        <svg width="24" height="14" viewBox="0 0 18 12" fill="currentColor"><rect width="18" height="0.75" y="0"></rect><rect width="12" height="0.75" y="5.625"></rect><rect width="18" height="0.75" y="11.25"></rect></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="overflow-hidden transition-all duration-[1000ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] md:hidden max-h-0 opacity-0 invisible">
+      <div class="flex flex-col items-center gap-10 bg-[#F4F1EC] pb-12 pt-4">
+        <button onclick="scrollToSection('portfolio'); closeMobileMenu()" class="text-[#686025] transition-colors duration-700 hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">Work</button>
+        <button onclick="scrollToSection('about'); closeMobileMenu()" class="text-[#686025] transition-colors duration-700 hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">About</button>
+        <button onclick="scrollToSection('contact'); closeMobileMenu()" class="text-[#686025] transition-colors duration-700 hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">Contact</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative w-full overflow-hidden bg-[#151206]" style="height: 45vh; min-height: 320px;">
+      <div class="absolute inset-0 will-change-transform" style="transform: translateY(0px);">
+        <img src="https://images.unsplash.com/photo-1534088568595-a76e6d88e4b1?q=80&w=2070&auto=format" alt="Hero photograph" class="h-full w-full object-cover transition-opacity duration-[800ms] ease-out opacity-60" style="opacity: 0.6;">
+      </div>
+      <div class="absolute inset-0 bg-[#312F07]/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#151206]/60 via-transparent to-transparent"></div>
+      <div class="relative z-10 flex h-full items-end pb-16 pl-8 pr-[40%] md:pl-16 md:pr-[45%] lg:pl-20 lg:pr-[50%]">
+        <div>
+          <h1 class="text-[#F4F1EC] transition-all duration-[800ms] ease-out opacity-100 translate-y-0 fade-up" style="font-size: 80px; font-weight: 200; letter-spacing: 0.15em; line-height: 1.1;">Anya Stsetskevich</h1>
+          <p class="mt-4 text-[#DFD480]/60 uppercase tracking-[0.4em] transition-all duration-[800ms] ease-out delay-200 opacity-100 translate-y-0 fade-up delay-100" style="font-size: clamp(2rem, 2.6vw, 2.6rem); font-weight: 300;">Photography</p>
         </div>
-        <div id="mobileMenu" class="overflow-hidden transition-all duration-[1000ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] md:hidden max-h-0 opacity-0 invisible">
-            <div class="flex flex-col items-center gap-10 bg-[#F4F1EC] pb-12 pt-4">
-                <button onclick="scrollToSection('portfolio'); closeMobileMenu()" class="text-[#686025] transition-colors duration-700 hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">Work</button>
-                <button onclick="scrollToSection('about'); closeMobileMenu()" class="text-[#686025] transition-colors duration-700 hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">About</button>
-                <button onclick="scrollToSection('contact'); closeMobileMenu()" class="text-[#686025] transition-colors duration-700 hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; background: none; border: none; cursor: pointer; line-height: 1.5;">Contact</button>
-            </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="bg-[#F4F1EC] py-16 md:py-24">
+      <div class="container-custom">
+        <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+          <p class="mb-14 text-[#9B9144] uppercase tracking-[0.25em]" style="font-size: 1.3rem; font-weight: 400; line-height: 1.6;">Work</p>
         </div>
-    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative w-full overflow-hidden bg-[#151206]" style="height: 45vh; min-height: 320px;">
-            <div class="absolute inset-0 will-change-transform" style="transform: translateY(0px);">
-                <img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/hero-background.jpg" alt="Hero photograph" class="h-full w-full object-cover transition-opacity duration-[800ms] ease-out opacity-60">
-            </div>
-            <div class="absolute inset-0 bg-[#312F07]/20"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#151206]/60 via-transparent to-transparent"></div>
-            <div class="relative z-10 flex h-full items-end pb-16 pl-8 pr-[40%] md:pl-16 md:pr-[45%] lg:pl-20 lg:pr-[50%]">
-                <div>
-                    <h1 class="text-[#F4F1EC] transition-all duration-[800ms] ease-out opacity-100 translate-y-0 fade-up" style="font-size: 80px; font-weight: 200; letter-spacing: 0.15em; line-height: 1.1;">Anya Stsetskevich</h1>
-                    <p class="mt-4 text-[#DFD480]/60 uppercase tracking-[0.4em] transition-all duration-[800ms] ease-out delay-200 opacity-100 translate-y-0 fade-up delay-100" style="font-size: clamp(2rem, 2.6vw, 2.6rem); font-weight: 300;">Photography</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO SECTION (exact copy) -->
-        <section id="portfolio" class="bg-[#F4F1EC]">
-            <div class="mx-auto px-6 py-16 md:px-12 lg:px-20" style="max-width: 1100px;">
-                <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                    <p class="mb-14 text-[#9B9144] uppercase tracking-[0.25em]" style="font-size: 1.3rem; font-weight: 400; line-height: 1.6;">Work</p>
-                </div>
-
-                <!-- Portrait Photography -->
-                <div class="mb-16 md:mb-24">
-                    <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                        <p class="mb-8 md:mb-12 text-[#312F07] uppercase tracking-[0.18em]" style="font-size: 1.4rem; font-weight: 400; line-height: 1.5;">Portrait Photography</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/street-portrait/street-portrait-01.jpg" alt="Street Portrait Compilation" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Street Portrait Compilation</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/yozefa/yozefa-02.jpg" alt="Yozefa Stsiatskevich" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Yozefa Stsiatskevich</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/kayla/kayla-01.jpg" alt="Kayla" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Kayla</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/naveed/naveed-01.jpg" alt="Naveed" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Naveed</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/selv/selv-02.jpg" alt="Selv" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Selv</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/chris/chris-01.jpg" alt="Chris" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Chris</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                    </div>
-                </div>
-
-                <!-- Family Photography -->
-                <div class="mb-16 md:mb-24">
-                    <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                        <p class="mb-8 md:mb-12 text-[#312F07] uppercase tracking-[0.18em]" style="font-size: 1.4rem; font-weight: 400; line-height: 1.5;">Family Photography</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/engagement/engagement-photography1.jpg" alt="Engagement Photography" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Engagement Photography</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/mclaren/mclaren-92.jpg" alt="McLaren" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">McLaren</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/natalia-hordynska/natalia-4.jpg" alt="Natalia Hordynska" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Natalia Hordynska</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/nyguyen/nyguyen-8.jpg" alt="Nyguven" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Nyguven</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/erika-zhenia/ez-02.jpg" alt="Erika and Zhenia" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Erika and Zhenia</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
-                    </div>
-                </div>
-
-                <!-- Pets Photography -->
-                <div class="">
-                    <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                        <p class="mb-8 md:mb-12 text-[#312F07] uppercase tracking-[0.18em]" style="font-size: 1.4rem; font-weight: 400; line-height: 1.5;">Pets Photography</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/ozer/ozer-1.png" alt="Ozër" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Ozër</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2023</span></div></a></div>
-                        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up"><a class="group block" href="#"><div class="overflow-hidden"><div style="aspect-ratio: 3 / 4;"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/charlie/charlie_01.jpg" alt="Charlie" class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" loading="lazy"></div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Charlie</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2023</span></div></a></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT SECTION (exact copy) -->
-        <section id="about" class="px-6 py-40 md:px-12 lg:px-20">
-            <div class="mx-auto max-w-[1400px]">
-                <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                    <div class="mb-20 flex items-baseline justify-between border-b border-[#9B9144]/30 pb-6">
-                        <p class="text-[#9B9144] uppercase tracking-[0.35em]" style="font-size: 1.2rem; font-weight: 400;">About</p>
-                        <p class="text-[#9B9144]/50 tracking-[0.15em] hidden md:block" style="font-size: 0.85rem; font-weight: 300;">Toronto &amp; GTA · Portrait · Street · Pets</p>
-                    </div>
-                </div>
-                <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                    <h2 class="text-[#151206] mb-16" style="font-size: clamp(2.4rem, 5vw, 4.5rem); font-weight: 200; line-height: 1.15; letter-spacing: -0.02em;">Capturing people and moments<br><span class="text-[#9B9144]">with honesty, warmth,</span><br>and emotion.</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 mb-24">
-                    <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up"><p class="text-[#151206]" style="font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 300; letter-spacing: 0.01em; line-height: 1.7;">Anya Stsetsevich is a portrait, street, and pet photographer based in Toronto and the GTA. Her work is centered around the beauty of natural expression — the unfiltered laughter, quiet vulnerability, spontaneous movement, and small details that make every person and every story unique.</p></div>
-                    <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up"><p class="text-[#151206]" style="font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 300; letter-spacing: 0.01em; line-height: 1.7;">Rather than creating perfect images, Anya focuses on preserving real feelings and genuine connection exactly as they are. Inspired by everyday life and human stories, she creates photographs that feel alive, personal, and timeless — images that hold emotion long after the moment has passed.</p></div>
-                </div>
-                <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                    <div class="flex items-center gap-6 mb-16">
-                        <div class="flex-1 h-px bg-[#9B9144]/20"></div>
-                        <p class="text-[#686025] italic text-center" style="font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 300; line-height: 1.5; letter-spacing: 0.02em;">"Here will be a phrase."</p>
-                        <div class="flex-1 h-px bg-[#9B9144]/20"></div>
-                    </div>
-                </div>
-                <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                    <div class="mb-20 md:mb-28"><p class="text-[#151206]/70 max-w-3xl" style="font-size: clamp(1rem, 1.5vw, 1.2rem); font-weight: 300; line-height: 1.8; letter-spacing: 0.03em;">Every session is a collaboration — a space where people can be themselves, feel comfortable, and let their true personality shine through. Whether it's a family gathering, a quiet portrait, a playful pet, or a fleeting street moment, the goal is always the same: to tell your story with authenticity and care.</p></div>
-                </div>
-                <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up">
-                    <div class="relative"><div class="flex items-baseline gap-4 mb-6"><span class="text-[#9B9144] uppercase tracking-[0.3em]" style="font-size: 0.75rem; font-weight: 400;">Photographer</span><div class="flex-1 h-px bg-[#9B9144]/15"></div><span class="text-[#9B9144]/60 tracking-[0.2em]" style="font-size: 0.75rem; font-weight: 300;">Anya Stsetsevich</span></div><div class="overflow-hidden group cursor-pointer relative"><img src="https://1156541-9bcf46b01330424e9f82a0759fb4a24e-v75-dev.dev.atoms.dev/assets/anya-portrait.jpg" alt="Anya Stsetsevich — Photographer" class="w-full h-auto transition-all duration-[2000ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.015] group-hover:brightness-[0.94]" loading="lazy"><div class="absolute inset-0 bg-[#312F07]/0 transition-all duration-[2000ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:bg-[#312F07]/[0.04]"></div></div></div>
-                </div>
-                <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                    <div class="mt-20 flex justify-center"><button onclick="scrollToSection('contact')" class="group relative px-20 py-8 border border-[#9B9144]/40 text-[#9B9144] uppercase tracking-[0.3em] transition-all duration-500 hover:border-[#9B9144] hover:bg-[#9B9144]/5" style="font-size: 1.4rem; font-weight: 400;">Book a Session<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-[#9B9144] transition-all duration-500 group-hover:w-full"></span></button></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION (exact copy) -->
-        <section id="contact" class="relative bg-[#F4F1EC] px-6 py-32 md:px-12 lg:px-20 overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#9B9144]/20 to-transparent"></div>
-            <div class="absolute top-20 right-10 w-72 h-72 rounded-full bg-[#9B9144]/[0.03] blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-[#9B9144]/[0.02] blur-3xl pointer-events-none"></div>
-            <div class="relative mx-auto max-w-[1100px]">
-                <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                    <div class="mb-20 text-center"><p class="text-[#9B9144] uppercase tracking-[0.4em] mb-6" style="font-size: 0.85rem; font-weight: 500;">Let's Create Together</p><h2 class="text-[#151206]" style="font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 200; letter-spacing: -0.02em; line-height: 1.2;">Book Your Session</h2><p class="mt-6 text-[#151206]/50 mx-auto max-w-lg" style="font-size: 1.1rem; font-weight: 300; line-height: 1.8;">Every great photo starts with a conversation. Tell me about your vision and let's bring it to life.</p></div>
-                </div>
-                <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
-                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-                        <div class="lg:col-span-3">
-                            <form id="bookingForm" class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-[0_4px_40px_rgba(155,145,68,0.06)] border border-[#9B9144]/5">
-                                <div class="space-y-8">
-                                    <div class="relative transition-all duration-300"><label class="block mb-2 transition-colors duration-300 text-[#151206]/70" style="font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Your Name <span class="text-[#9B9144]">*</span></label><input type="text" id="nameInput" required placeholder="How should I address you?" class="w-full bg-transparent border-b-2 border-[#151206]/8 pb-3 text-[#151206] placeholder:text-[#151206]/20 focus:border-[#9B9144] focus:outline-none transition-all duration-500" style="font-size: 1.15rem; font-weight: 300; line-height: 1.5;"></div>
-                                    <div class="relative transition-all duration-300"><label class="block mb-2 transition-colors duration-300 text-[#151206]/70" style="font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Email Address <span class="text-[#9B9144]">*</span></label><input type="email" id="emailInput" required placeholder="your@email.com" class="w-full bg-transparent border-b-2 border-[#151206]/8 pb-3 text-[#151206] placeholder:text-[#151206]/20 focus:border-[#9B9144] focus:outline-none transition-all duration-500" style="font-size: 1.15rem; font-weight: 300; line-height: 1.5;"></div>
-                                    <div><label class="block mb-4 transition-colors duration-300 text-[#151206]/70" style="font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Type of Session <span class="text-[#9B9144]">*</span></label><div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="sessionTypeGroup"><button type="button" data-session="Portrait Session" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">🎭</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Portrait Session</span></button><button type="button" data-session="Street Photography" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">🏙️</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Street Photography</span></button><button type="button" data-session="Pet Photography" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">🐾</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Pet Photography</span></button><button type="button" data-session="Family Session" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">👨‍👩‍👧</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Family Session</span></button><button type="button" data-session="Event Coverage" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">🎉</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Event Coverage</span></button><button type="button" data-session="Something Else" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">✨</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Something Else</span></button></div><input type="hidden" id="selectedSession" required></div>
-                                    <div class="relative transition-all duration-300"><label class="block mb-2 transition-colors duration-300 text-[#151206]/70" style="font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Preferred Date</label><input type="date" id="preferredDate" class="w-full bg-transparent border-b-2 border-[#151206]/8 pb-3 text-[#151206] focus:border-[#9B9144] focus:outline-none transition-all duration-500" style="font-size: 1.15rem; font-weight: 300; line-height: 1.5;"></div>
-                                    <div class="relative transition-all duration-300"><label class="block mb-2 transition-colors duration-300 text-[#151206]/70" style="font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Your Vision</label><textarea id="visionMsg" rows="4" placeholder="Tell me about the mood, location, or style you're dreaming of..." class="w-full bg-transparent border-b-2 border-[#151206]/8 pb-3 text-[#151206] placeholder:text-[#151206]/20 focus:border-[#9B9144] focus:outline-none transition-all duration-500 resize-none" style="font-size: 1.15rem; font-weight: 300; line-height: 1.7;"></textarea></div>
-                                    <div class="pt-4"><button type="submit" class="group relative w-full py-5 bg-[#151206] text-[#F4F1EC] rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl disabled:opacity-60" style="font-size: 1rem; font-weight: 400; letter-spacing: 0.15em;"><div class="absolute inset-0 bg-gradient-to-r from-[#9B9144] to-[#7A7235] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div><span class="relative flex items-center justify-center gap-3 uppercase">Send Request<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></span></button></div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="lg:col-span-2 flex flex-col justify-between">
-                            <div><div class="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-[0_4px_30px_rgba(155,145,68,0.04)] border border-[#9B9144]/5"><h3 class="text-[#151206] mb-6" style="font-size: 1.4rem; font-weight: 300;">Get in Touch</h3><div class="space-y-6"><a href="mailto:anya.artistphotographer@gmail.com" class="group flex items-start gap-4 p-4 rounded-xl hover:bg-[#9B9144]/5 transition-all duration-300"><div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center group-hover:bg-[#9B9144]/20 transition-colors duration-300"><svg class="w-4.5 h-4.5 text-[#9B9144]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg></div><div><p class="text-[#151206]/40 mb-1" style="font-size: 0.8rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase;">Email</p><p class="text-[#151206] group-hover:text-[#9B9144] transition-colors duration-300" style="font-size: 0.95rem; font-weight: 400;">anya.artistphotographer@gmail.com</p></div></a><a href="https://www.instagram.com/anya.artistphotographer" target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 p-4 rounded-xl hover:bg-[#9B9144]/5 transition-all duration-300"><div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center group-hover:bg-[#9B9144]/20 transition-colors duration-300"><svg class="w-4.5 h-4.5 text-[#9B9144]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></div><div><p class="text-[#151206]/40 mb-1" style="font-size: 0.8rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase;">Instagram</p><p class="text-[#151206] group-hover:text-[#9B9144] transition-colors duration-300" style="font-size: 0.95rem; font-weight: 400;">@anya.artistphotographer</p></div></a><div class="flex items-start gap-4 p-4"><div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center"><svg class="w-4.5 h-4.5 text-[#9B9144]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path></svg></div><div><p class="text-[#151206]/40 mb-1" style="font-size: 0.8rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase;">Location</p><p class="text-[#151206]" style="font-size: 0.95rem; font-weight: 400;">Toronto &amp; GTA, Ontario</p></div></div></div></div><div class="mt-6 flex items-center gap-3 px-5 py-3 bg-[#9B9144]/5 rounded-full w-fit"><span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9B9144]/40"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#9B9144]"></span></span><p class="text-[#151206]/60" style="font-size: 0.85rem; font-weight: 400;">Usually responds within 24 hours</p></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="px-6 py-24 md:px-12 lg:px-20">
-        <div class="mx-auto flex max-w-[1400px] flex-col items-start gap-8 md:flex-row md:items-baseline md:justify-between">
-            <span class="text-[#9B9144]" style="font-size: 1.3rem; font-weight: 300; letter-spacing: 0.15em; line-height: 1.5;">© 2025 Anya Stsetskevich</span>
+        <!-- Portrait Photography -->
+        <div class="mb-16 md:mb-24">
+          <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+            <p class="mb-8 md:mb-12 text-[#312F07] uppercase tracking-[0.18em]" style="font-size: 1.4rem; font-weight: 400; line-height: 1.5;">Portrait Photography</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Street Portrait Compilation</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Yozefa Stsiatskevich</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Kayla</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Naveed</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Selv</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Chris</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+          </div>
         </div>
-    </footer>
 
-    <script>
-        // Mobile menu
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('mobile-menu-open');
-            mobileMenu.style.maxHeight = '0';
-            mobileMenu.style.opacity = '0';
-            mobileMenu.style.visibility = 'hidden';
-        }
-        menuBtn.addEventListener('click', () => {
-            if(mobileMenu.classList.contains('mobile-menu-open')) closeMobileMenu();
-            else {
-                mobileMenu.classList.add('mobile-menu-open');
-                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-                mobileMenu.style.opacity = '1';
-                mobileMenu.style.visibility = 'visible';
-            }
-        });
+        <!-- Family Photography -->
+        <div class="mb-16 md:mb-24">
+          <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+            <p class="mb-8 md:mb-12 text-[#312F07] uppercase tracking-[0.18em]" style="font-size: 1.4rem; font-weight: 400; line-height: 1.5;">Family Photography</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Engagement Photography</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">McLaren</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Natalia Hordynska</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Nyguven</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2024</span></div></a></div>
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Erika and Zhenia</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2025</span></div></a></div>
+          </div>
+        </div>
 
-        // Scroll to section
-        window.scrollToSection = function(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-            closeMobileMenu();
-        }
+        <!-- Pets Photography -->
+        <div class="">
+          <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+            <p class="mb-8 md:mb-12 text-[#312F07] uppercase tracking-[0.18em]" style="font-size: 1.4rem; font-weight: 400; line-height: 1.5;">Pets Photography</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 md:gap-y-16">
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Ozër</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2023</span></div></a></div>
+            <div class="group"><a href="#"><div class="overflow-hidden"><div class="portfolio-placeholder">Your image here</div></div><div class="mt-4"><span class="text-[#151206] transition-colors duration-700 group-hover:text-[#9B9144]" style="font-size: 1.4rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1.5;">Charlie</span><span class="ml-4 text-[#9B9144] transition-colors duration-700 group-hover:text-[#DFD480]" style="font-size: 1rem; font-weight: 300; letter-spacing: 0.05em;">2023</span></div></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Navigation background change on scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 50) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
-        });
+    <!-- ABOUT SECTION -->
+    <section id="about" class="px-6 py-40 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-[1400px]">
+        <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+          <div class="mb-20 flex items-baseline justify-between border-b border-[#9B9144]/30 pb-6">
+            <p class="text-[#9B9144] uppercase tracking-[0.35em]" style="font-size: 1.2rem; font-weight: 400;">About</p>
+            <p class="text-[#9B9144]/50 tracking-[0.15em] hidden md:block" style="font-size: 0.85rem; font-weight: 300;">Toronto &amp; GTA · Portrait · Street · Pets</p>
+          </div>
+        </div>
+        <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+          <h2 class="text-[#151206] mb-16" style="font-size: clamp(2.4rem, 5vw, 4.5rem); font-weight: 200; line-height: 1.15; letter-spacing: -0.02em;">Capturing people and moments<br><span class="text-[#9B9144]">with honesty, warmth,</span><br>and emotion.</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 mb-24">
+          <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up"><p class="text-[#151206]" style="font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 300; letter-spacing: 0.01em; line-height: 1.7;">Anya Stsetsevich is a portrait, street, and pet photographer based in Toronto and the GTA. Her work is centered around the beauty of natural expression — the unfiltered laughter, quiet vulnerability, spontaneous movement, and small details that make every person and every story unique.</p></div>
+          <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up"><p class="text-[#151206]" style="font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 300; letter-spacing: 0.01em; line-height: 1.7;">Rather than creating perfect images, Anya focuses on preserving real feelings and genuine connection exactly as they are. Inspired by everyday life and human stories, she creates photographs that feel alive, personal, and timeless — images that hold emotion long after the moment has passed.</p></div>
+        </div>
+        <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+          <div class="flex items-center gap-6 mb-16">
+            <div class="flex-1 h-px bg-[#9B9144]/20"></div>
+            <p class="text-[#686025] italic text-center" style="font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 300; line-height: 1.5; letter-spacing: 0.02em;">"Here will be a phrase."</p>
+            <div class="flex-1 h-px bg-[#9B9144]/20"></div>
+          </div>
+        </div>
+        <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+          <div class="mb-20 md:mb-28"><p class="text-[#151206]/70 max-w-3xl" style="font-size: clamp(1rem, 1.5vw, 1.2rem); font-weight: 300; line-height: 1.8; letter-spacing: 0.03em;">Every session is a collaboration — a space where people can be themselves, feel comfortable, and let their true personality shine through. Whether it's a family gathering, a quiet portrait, a playful pet, or a fleeting street moment, the goal is always the same: to tell your story with authenticity and care.</p></div>
+        </div>
+        <div class="transition-all duration-700 ease-out opacity-100 scale-100 fade-up">
+          <div class="relative"><div class="flex items-baseline gap-4 mb-6"><span class="text-[#9B9144] uppercase tracking-[0.3em]" style="font-size: 0.75rem; font-weight: 400;">Photographer</span><div class="flex-1 h-px bg-[#9B9144]/15"></div><span class="text-[#9B9144]/60 tracking-[0.2em]" style="font-size: 0.75rem; font-weight: 300;">Anya Stsetsevich</span></div><div class="overflow-hidden group cursor-pointer relative"><div style="aspect-ratio: 3 / 2; background-color: #E8E6E0; display: flex; align-items: center; justify-content: center; color: #9B9144;">Your photo here</div><div class="absolute inset-0 bg-[#312F07]/0 transition-all duration-[2000ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:bg-[#312F07]/[0.04]"></div></div></div>
+        </div>
+        <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+          <div class="mt-20 flex justify-center"><button onclick="scrollToSection('contact')" class="group relative px-20 py-8 border border-[#9B9144]/40 text-[#9B9144] uppercase tracking-[0.3em] transition-all duration-500 hover:border-[#9B9144] hover:bg-[#9B9144]/5" style="font-size: 1.4rem; font-weight: 400;">Book a Session<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-[#9B9144] transition-all duration-500 group-hover:w-full"></span></button></div>
+        </div>
+      </div>
+    </section>
 
-        // Session type selection
-        let selectedSessionValue = '';
-        const sessionBtns = document.querySelectorAll('.session-btn');
-        const sessionHidden = document.getElementById('selectedSession');
-        sessionBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                sessionBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                selectedSessionValue = btn.getAttribute('data-session');
-                sessionHidden.value = selectedSessionValue;
-            });
-        });
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="relative bg-[#F4F1EC] px-6 py-32 md:px-12 lg:px-20 overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#9B9144]/20 to-transparent"></div>
+      <div class="absolute top-20 right-10 w-72 h-72 rounded-full bg-[#9B9144]/[0.03] blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-[#9B9144]/[0.02] blur-3xl pointer-events-none"></div>
+      <div class="relative mx-auto max-w-[1100px]">
+        <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+          <div class="mb-20 text-center"><p class="text-[#9B9144] uppercase tracking-[0.4em] mb-6" style="font-size: 0.85rem; font-weight: 500;">Let's Create Together</p><h2 class="text-[#151206]" style="font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 200; letter-spacing: -0.02em; line-height: 1.2;">Book Your Session</h2><p class="mt-6 text-[#151206]/50 mx-auto max-w-lg" style="font-size: 1.1rem; font-weight: 300; line-height: 1.8;">Every great photo starts with a conversation. Tell me about your vision and let's bring it to life.</p></div>
+        </div>
+        <div class="transition-all duration-700 ease-out opacity-100 translate-y-0 fade-up">
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+            <div class="lg:col-span-3">
+              <form id="bookingForm" class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-[0_4px_40px_rgba(155,145,68,0.06)] border border-[#9B9144]/5">
+                <div class="space-y-8">
+                  <div class="relative transition-all duration-300"><label class="block mb-2 transition-colors duration-300 text-[#151206]/70" style="font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Your Name <span class="text-[#9B9144]">*</span></label><input type="text" id="nameInput" required placeholder="How should I address you?" class="w-full bg-transparent border-b-2 border-[#151206]/8 pb-3 text-[#151206] placeholder:text-[#151206]/20 focus:border-[#9B9144] focus:outline-none transition-all duration-500" style="font-size: 1.15rem; font-weight: 300; line-height: 1.5;"></div>
+                  <div class="relative transition-all duration-300"><label class="block mb-2 transition-colors duration-300 text-[#151206]/70" style="font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Email Address <span class="text-[#9B9144]">*</span></label><input type="email" id="emailInput" required placeholder="your@email.com" class="w-full bg-transparent border-b-2 border-[#151206]/8 pb-3 text-[#151206] placeholder:text-[#151206]/20 focus:border-[#9B9144] focus:outline-none transition-all duration-500" style="font-size: 1.15rem; font-weight: 300; line-height: 1.5;"></div>
+                  <div><label class="block mb-4 transition-colors duration-300 text-[#151206]/70" style="font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Type of Session <span class="text-[#9B9144]">*</span></label><div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="sessionTypeGroup"><button type="button" data-session="Portrait Session" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">🎭</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Portrait Session</span></button><button type="button" data-session="Street Photography" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">🏙️</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Street Photography</span></button><button type="button" data-session="Pet Photography" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">🐾</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Pet Photography</span></button><button type="button" data-session="Family Session" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">👨‍👩‍👧</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Family Session</span></button><button type="button" data-session="Event Coverage" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">🎉</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Event Coverage</span></button><button type="button" data-session="Something Else" class="session-btn p-3.5 rounded-xl border-2 text-center transition-all duration-300 hover:scale-[1.02] border-[#151206]/8 hover:border-[#9B9144]/30 bg-transparent"><span class="block text-xl mb-1.5">✨</span><span class="block transition-colors duration-300 text-[#151206]/60" style="font-size: 0.8rem; font-weight: 400;">Something Else</span></button></div><input type="hidden" id="selectedSession" required></div>
+                  <div class="relative transition-all duration-300"><label class="block mb-2 transition-colors duration-300 text-[#151206]/70" style="font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Preferred Date</label><input type="date" id="preferredDate" class="w-full bg-transparent border-b-2 border-[#151206]/8 pb-3 text-[#151206] focus:border-[#9B9144] focus:outline-none transition-all duration-500" style="font-size: 1.15rem; font-weight: 300; line-height: 1.5;"></div>
+                  <div class="relative transition-all duration-300"><label class="block mb-2 transition-colors duration-300 text-[#151206]/70" style="font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Your Vision</label><textarea id="visionMsg" rows="4" placeholder="Tell me about the mood, location, or style you're dreaming of..." class="w-full bg-transparent border-b-2 border-[#151206]/8 pb-3 text-[#151206] placeholder:text-[#151206]/20 focus:border-[#9B9144] focus:outline-none transition-all duration-500 resize-none" style="font-size: 1.15rem; font-weight: 300; line-height: 1.7;"></textarea></div>
+                  <div class="pt-4"><button type="submit" class="group relative w-full py-5 bg-[#151206] text-[#F4F1EC] rounded-xl overflow-hidden transition-all duration-500 hover:shadow-xl disabled:opacity-60" style="font-size: 1rem; font-weight: 400; letter-spacing: 0.15em;"><div class="absolute inset-0 bg-gradient-to-r from-[#9B9144] to-[#7A7235] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div><span class="relative flex items-center justify-center gap-3 uppercase">Send Request<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></span></button></div>
+                </div>
+              </form>
+            </div>
+            <div class="lg:col-span-2 flex flex-col justify-between">
+              <div><div class="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-[0_4px_30px_rgba(155,145,68,0.04)] border border-[#9B9144]/5"><h3 class="text-[#151206] mb-6" style="font-size: 1.4rem; font-weight: 300;">Get in Touch</h3><div class="space-y-6"><a href="mailto:anya.artistphotographer@gmail.com" class="group flex items-start gap-4 p-4 rounded-xl hover:bg-[#9B9144]/5 transition-all duration-300"><div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center group-hover:bg-[#9B9144]/20 transition-colors duration-300"><svg class="w-4.5 h-4.5 text-[#9B9144]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg></div><div><p class="text-[#151206]/40 mb-1" style="font-size: 0.8rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase;">Email</p><p class="text-[#151206] group-hover:text-[#9B9144] transition-colors duration-300" style="font-size: 0.95rem; font-weight: 400;">anya.artistphotographer@gmail.com</p></div></a><a href="https://www.instagram.com/anya.artistphotographer" target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 p-4 rounded-xl hover:bg-[#9B9144]/5 transition-all duration-300"><div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center group-hover:bg-[#9B9144]/20 transition-colors duration-300"><svg class="w-4.5 h-4.5 text-[#9B9144]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></div><div><p class="text-[#151206]/40 mb-1" style="font-size: 0.8rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase;">Instagram</p><p class="text-[#151206] group-hover:text-[#9B9144] transition-colors duration-300" style="font-size: 0.95rem; font-weight: 400;">@anya.artistphotographer</p></div></a><div class="flex items-start gap-4 p-4"><div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#9B9144]/10 flex items-center justify-center"><svg class="w-4.5 h-4.5 text-[#9B9144]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path></svg></div><div><p class="text-[#151206]/40 mb-1" style="font-size: 0.8rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase;">Location</p><p class="text-[#151206]" style="font-size: 0.95rem; font-weight: 400;">Toronto &amp; GTA, Ontario</p></div></div></div></div><div class="mt-6 flex items-center gap-3 px-5 py-3 bg-[#9B9144]/5 rounded-full w-fit"><span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9B9144]/40"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#9B9144]"></span></span><p class="text-[#151206]/60" style="font-size: 0.85rem; font-weight: 400;">Usually responds within 24 hours</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        // Form submission
-        const form = document.getElementById('bookingForm');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('nameInput').value.trim();
-            const email = document.getElementById('emailInput').value.trim();
-            if(!name || !email) { alert("Please fill in your name and email."); return; }
-            if(!selectedSessionValue) { alert("Please select a session type."); return; }
-            alert(`Thank you ${name}! Your ${selectedSessionValue} request has been sent.\nAnya will reply within 24 hours.`);
-            form.reset();
-            sessionBtns.forEach(b => b.classList.remove('active'));
-            selectedSessionValue = '';
-            sessionHidden.value = '';
-        });
-    </script>
+  <footer class="px-6 py-24 md:px-12 lg:px-20">
+    <div class="mx-auto flex max-w-[1400px] flex-col items-start gap-8 md:flex-row md:items-baseline md:justify-between">
+      <span class="text-[#9B9144]" style="font-size: 1.3rem; font-weight: 300; letter-spacing: 0.15em; line-height: 1.5;">© 2025 Anya Stsetskevich</span>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu logic
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('mobile-menu-open');
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.visibility = 'hidden';
+    }
+
+    menuBtn.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('mobile-menu-open')) {
+        closeMobileMenu();
+      } else {
+        mobileMenu.classList.add('mobile-menu-open');
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+        mobileMenu.style.visibility = 'visible';
+      }
+    });
+
+    // Scroll to section
+    window.scrollToSection = function(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeMobileMenu();
+    };
+
+    // Navigation background change on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    // Session type selection
+    let selectedSessionValue = '';
+    const sessionBtns = document.querySelectorAll('.session-btn');
+    const sessionHidden = document.getElementById('selectedSession');
+
+    sessionBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sessionBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedSessionValue = btn.getAttribute('data-session');
+        sessionHidden.value = selectedSessionValue;
+      });
+    });
+
+    // Form submission
+    const form = document.getElementById('bookingForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('nameInput').value.trim();
+      const email = document.getElementById('emailInput').value.trim();
+
+      if (!name || !email) {
+        alert("Please fill in your name and email.");
+        return;
+      }
+      if (!selectedSessionValue) {
+        alert("Please select a session type.");
+        return;
+      }
+
+      alert(`Thank you ${name}! Your ${selectedSessionValue} request has been sent.\nAnya will reply within 24 hours.`);
+      form.reset();
+      sessionBtns.forEach(b => b.classList.remove('active'));
+      selectedSessionValue = '';
+      sessionHidden.value = '';
+    });
+  </script>
 </body>
 </html>
