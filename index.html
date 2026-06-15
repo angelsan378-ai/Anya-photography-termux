@@ -49,7 +49,7 @@
             .container-wide { padding: 0 5rem; }
         }
 
-        /* -------------------- HERO (поднятый текст) -------------------- */
+        /* -------------------- HERO -------------------- */
         .hero {
             position: relative;
             width: 100%;
@@ -76,7 +76,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding-bottom: 15%;  /* подняли текст — раньше было прижато к низу */
+            padding-bottom: 15%;
             padding-left: 8%;
             padding-right: 40%;
         }
@@ -110,7 +110,7 @@
             margin-top: 1rem;
         }
 
-        /* -------------------- ПОРТФОЛИО (ЗАКРЕПЛЁННАЯ СЕТКА) -------------------- */
+        /* -------------------- ПОРТФОЛИО -------------------- */
         .portfolio-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -194,7 +194,156 @@
             }
         }
 
-        /* -------------------- ВРЕМЕННЫЕ ЗАГОЛОВКИ -------------------- */
+        /* -------------------- ABOUT (новая секция) -------------------- */
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        .about-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid rgba(155,145,68,0.3);
+            padding-bottom: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        .about-label {
+            color: #9B9144;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+        }
+        .about-location {
+            color: rgba(155,145,68,0.5);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            font-weight: 300;
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .about-location {
+                display: block;
+            }
+        }
+        .about-headline {
+            font-size: clamp(2.4rem, 5vw, 4.5rem);
+            font-weight: 200;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: #151206;
+            margin-bottom: 3rem;
+        }
+        .about-headline span {
+            color: #9B9144;
+        }
+        .about-text-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        @media (min-width: 768px) {
+            .about-text-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        .about-text {
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            font-weight: 300;
+            line-height: 1.7;
+            color: #151206;
+        }
+        .about-quote {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 2rem 0 2rem 0;
+        }
+        .quote-line {
+            flex: 1;
+            height: 1px;
+            background-color: rgba(155,145,68,0.2);
+        }
+        .quote-text {
+            color: #686025;
+            font-style: italic;
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            font-weight: 300;
+            text-align: center;
+        }
+        .about-paragraph {
+            max-width: 800px;
+            margin-bottom: 3rem;
+        }
+        .about-paragraph p {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(21,18,6,0.7);
+        }
+        .photographer-signature {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .photo-label {
+            color: #9B9144;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+        .photo-line {
+            flex: 1;
+            height: 1px;
+            background-color: rgba(155,145,68,0.15);
+        }
+        .photo-name {
+            color: rgba(155,145,68,0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            font-weight: 300;
+        }
+        .photographer-image {
+            aspect-ratio: 3 / 2;
+            background-color: #E8E6E0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9B9144;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        .book-btn-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 4rem;
+        }
+        .book-btn {
+            background: none;
+            border: 1px solid rgba(155,145,68,0.4);
+            color: #9B9144;
+            font-size: 1.2rem;
+            font-weight: 400;
+            padding: 1rem 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            cursor: pointer;
+            transition: all 0.5s;
+            position: relative;
+        }
+        .book-btn:hover {
+            border-color: #9B9144;
+            background-color: rgba(155,145,68,0.05);
+        }
+
+        /* -------------------- ВРЕМЕННЫЕ СЕКЦИИ -------------------- */
         .coming-soon {
             text-align: center;
             padding: 4rem 1rem;
@@ -227,7 +376,7 @@
     </div>
 </nav>
 
-<!-- HERO СЕКЦИЯ (текст поднят выше) -->
+<!-- HERO -->
 <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-gradient"></div>
@@ -280,8 +429,43 @@
     </div>
 </section>
 
-<!-- ВРЕМЕННЫЕ СЕКЦИИ ABOUT И CONTACT -->
-<section id="about" class="coming-soon">About section — скоро добавим</section>
+<!-- ABOUT СЕКЦИЯ -->
+<section id="about">
+    <div class="about-container">
+        <div class="about-header">
+            <div class="about-label">About</div>
+            <div class="about-location">Toronto & GTA · Portrait · Street · Pets</div>
+        </div>
+        <div class="about-headline">
+            Capturing people and moments<br>
+            <span>with honesty, warmth,</span><br>
+            and emotion.
+        </div>
+        <div class="about-text-grid">
+            <div class="about-text">Anya Stsetsevich is a portrait, street, and pet photographer based in Toronto and the GTA. Her work is centered around the beauty of natural expression — the unfiltered laughter, quiet vulnerability, spontaneous movement, and small details that make every person and every story unique.</div>
+            <div class="about-text">Rather than creating perfect images, Anya focuses on preserving real feelings and genuine connection exactly as they are. Inspired by everyday life and human stories, she creates photographs that feel alive, personal, and timeless — images that hold emotion long after the moment has passed.</div>
+        </div>
+        <div class="about-quote">
+            <div class="quote-line"></div>
+            <div class="quote-text">"Here will be a phrase."</div>
+            <div class="quote-line"></div>
+        </div>
+        <div class="about-paragraph">
+            <p>Every session is a collaboration — a space where people can be themselves, feel comfortable, and let their true personality shine through. Whether it's a family gathering, a quiet portrait, a playful pet, or a fleeting street moment, the goal is always the same: to tell your story with authenticity and care.</p>
+        </div>
+        <div class="photographer-signature">
+            <div class="photo-label">Photographer</div>
+            <div class="photo-line"></div>
+            <div class="photo-name">Anya Stsetsevich</div>
+        </div>
+        <div class="photographer-image">Your photo here</div>
+        <div class="book-btn-wrapper">
+            <button class="book-btn" onclick="scrollToSection('contact')">Book a Session</button>
+        </div>
+    </div>
+</section>
+
+<!-- ВРЕМЕННАЯ СЕКЦИЯ CONTACT (будет заменена позже) -->
 <section id="contact" class="coming-soon">Contact section — скоро добавим</section>
 
 <footer>
