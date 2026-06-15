@@ -194,7 +194,7 @@
             }
         }
 
-        /* -------------------- ABOUT (новая секция) -------------------- */
+        /* -------------------- ABOUT -------------------- */
         .about-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -343,15 +343,247 @@
             background-color: rgba(155,145,68,0.05);
         }
 
-        /* -------------------- ВРЕМЕННЫЕ СЕКЦИИ -------------------- */
-        .coming-soon {
-            text-align: center;
-            padding: 4rem 1rem;
-            color: #9B9144;
-            font-size: 1.2rem;
-            border-top: 1px solid rgba(155,145,68,0.2);
-            margin-top: 2rem;
+        /* -------------------- CONTACT (новая секция) -------------------- */
+        .contact-section {
+            position: relative;
+            background-color: #F4F1EC;
+            padding: 4rem 1.5rem;
+            overflow: hidden;
         }
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .contact-sup {
+            color: #9B9144;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .contact-title {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 200;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #151206;
+        }
+        .contact-desc {
+            color: rgba(21,18,6,0.5);
+            max-width: 500px;
+            margin: 1rem auto 0;
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 3fr 2fr;
+                gap: 3rem;
+            }
+        }
+        /* форма */
+        .contact-form {
+            background-color: rgba(255,255,255,0.8);
+            backdrop-filter: blur(4px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(155,145,68,0.1);
+            box-shadow: 0 4px 30px rgba(155,145,68,0.04);
+        }
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        .form-label {
+            display: block;
+            color: rgba(21,18,6,0.7);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .form-label span {
+            color: #9B9144;
+        }
+        .form-input, .form-textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(21,18,6,0.1);
+            padding-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #151206;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-input:focus, .form-textarea:focus {
+            border-bottom-color: #9B9144;
+        }
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .session-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        @media (min-width: 480px) {
+            .session-buttons {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .session-btn {
+            background: transparent;
+            border: 1px solid rgba(21,18,6,0.1);
+            border-radius: 0.75rem;
+            padding: 0.75rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .session-btn:hover {
+            border-color: rgba(155,145,68,0.4);
+            transform: scale(1.02);
+        }
+        .session-btn.active {
+            border-color: #9B9144;
+            background-color: rgba(155,145,68,0.08);
+        }
+        .session-btn.active .session-text {
+            color: #9B9144;
+            font-weight: 500;
+        }
+        .session-icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .session-text {
+            font-size: 0.7rem;
+            color: rgba(21,18,6,0.6);
+        }
+        .submit-btn {
+            width: 100%;
+            background-color: #151206;
+            color: #F4F1EC;
+            border: none;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+        .submit-btn:hover {
+            background-color: #2a2610;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        /* контактная информация */
+        .contact-info {
+            background-color: rgba(255,255,255,0.6);
+            backdrop-filter: blur(4px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(155,145,68,0.1);
+        }
+        .info-title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: #151206;
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            transition: background 0.2s;
+        }
+        .info-item:hover {
+            background-color: rgba(155,145,68,0.05);
+        }
+        .info-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgba(155,145,68,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .info-icon svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            color: #9B9144;
+        }
+        .info-content p:first-child {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgba(21,18,6,0.4);
+            margin-bottom: 0.2rem;
+        }
+        .info-content p:last-child {
+            color: #151206;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        .response-badge {
+            margin-top: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(155,145,68,0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            color: rgba(21,18,6,0.6);
+        }
+        .ping {
+            position: relative;
+            width: 0.6rem;
+            height: 0.6rem;
+        }
+        .ping-dot {
+            position: absolute;
+            width: 0.6rem;
+            height: 0.6rem;
+            background-color: #9B9144;
+            border-radius: 50%;
+        }
+        .ping-animation {
+            position: absolute;
+            width: 0.6rem;
+            height: 0.6rem;
+            background-color: rgba(155,145,68,0.6);
+            border-radius: 50%;
+            animation: ping 1.5s infinite;
+        }
+        @keyframes ping {
+            0% { transform: scale(1); opacity: 0.6; }
+            70% { transform: scale(2.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -392,8 +624,6 @@
 <section id="portfolio">
     <div class="portfolio-container">
         <div class="work-label">Work</div>
-
-        <!-- Portrait Photography -->
         <div class="portfolio-section">
             <div class="section-title">Portrait Photography</div>
             <div class="grid-two">
@@ -405,8 +635,6 @@
                 <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Chris</span><span class="card-year">2025</span></div></div>
             </div>
         </div>
-
-        <!-- Family Photography -->
         <div class="portfolio-section">
             <div class="section-title">Family Photography</div>
             <div class="grid-two">
@@ -417,8 +645,6 @@
                 <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Erika and Zhenia</span><span class="card-year">2025</span></div></div>
             </div>
         </div>
-
-        <!-- Pets Photography -->
         <div class="portfolio-section">
             <div class="section-title">Pets Photography</div>
             <div class="grid-two">
@@ -429,7 +655,7 @@
     </div>
 </section>
 
-<!-- ABOUT СЕКЦИЯ -->
+<!-- ABOUT -->
 <section id="about">
     <div class="about-container">
         <div class="about-header">
@@ -465,8 +691,70 @@
     </div>
 </section>
 
-<!-- ВРЕМЕННАЯ СЕКЦИЯ CONTACT (будет заменена позже) -->
-<section id="contact" class="coming-soon">Contact section — скоро добавим</section>
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <div class="contact-header">
+            <div class="contact-sup">Let's Create Together</div>
+            <div class="contact-title">Book Your Session</div>
+            <div class="contact-desc">Every great photo starts with a conversation. Tell me about your vision and let's bring it to life.</div>
+        </div>
+        <div class="contact-grid">
+            <!-- форма -->
+            <form id="bookingForm" class="contact-form">
+                <div class="form-group">
+                    <label class="form-label">Your Name <span>*</span></label>
+                    <input type="text" id="formName" class="form-input" placeholder="How should I address you?" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address <span>*</span></label>
+                    <input type="email" id="formEmail" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Type of Session <span>*</span></label>
+                    <div class="session-buttons" id="sessionButtons">
+                        <button type="button" data-session="Portrait Session" class="session-btn"><span class="session-icon">🎭</span><span class="session-text">Portrait Session</span></button>
+                        <button type="button" data-session="Street Photography" class="session-btn"><span class="session-icon">🏙️</span><span class="session-text">Street Photography</span></button>
+                        <button type="button" data-session="Pet Photography" class="session-btn"><span class="session-icon">🐾</span><span class="session-text">Pet Photography</span></button>
+                        <button type="button" data-session="Family Session" class="session-btn"><span class="session-icon">👨‍👩‍👧</span><span class="session-text">Family Session</span></button>
+                        <button type="button" data-session="Event Coverage" class="session-btn"><span class="session-icon">🎉</span><span class="session-text">Event Coverage</span></button>
+                        <button type="button" data-session="Something Else" class="session-btn"><span class="session-icon">✨</span><span class="session-text">Something Else</span></button>
+                    </div>
+                    <input type="hidden" id="selectedSessionInput" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Preferred Date</label>
+                    <input type="date" id="formDate" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Your Vision</label>
+                    <textarea id="formVision" class="form-textarea" rows="3" placeholder="Tell me about the mood, location, or style you're dreaming of..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Request →</button>
+            </form>
+            <!-- контактная информация -->
+            <div class="contact-info">
+                <div class="info-title">Get in Touch</div>
+                <div class="info-item">
+                    <div class="info-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25"/></svg></div>
+                    <div class="info-content"><p>Email</p><p>anya.artistphotographer@gmail.com</p></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0z"/></svg></div>
+                    <div class="info-content"><p>Instagram</p><p>@anya.artistphotographer</p></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div>
+                    <div class="info-content"><p>Location</p><p>Toronto & GTA, Ontario</p></div>
+                </div>
+                <div class="response-badge">
+                    <div class="ping"><div class="ping-animation"></div><div class="ping-dot"></div></div>
+                    <span>Usually responds within 24 hours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer>
     © 2025 Anya Stsetskevich
@@ -484,6 +772,40 @@
         document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
     window.scrollToSection = scrollToSection;
+
+    // Логика выбора типа сессии
+    let selectedSession = '';
+    const sessionBtns = document.querySelectorAll('.session-btn');
+    const hiddenSession = document.getElementById('selectedSessionInput');
+    sessionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            sessionBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            selectedSession = btn.getAttribute('data-session');
+            hiddenSession.value = selectedSession;
+        });
+    });
+
+    // Отправка формы
+    const form = document.getElementById('bookingForm');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('formName').value.trim();
+        const email = document.getElementById('formEmail').value.trim();
+        if(!name || !email) {
+            alert("Please fill in your name and email.");
+            return;
+        }
+        if(!selectedSession) {
+            alert("Please select a session type.");
+            return;
+        }
+        alert(`Thank you ${name}! Your ${selectedSession} request has been sent.\nAnya will reply within 24 hours.`);
+        form.reset();
+        sessionBtns.forEach(b => b.classList.remove('active'));
+        selectedSession = '';
+        hiddenSession.value = '';
+    });
 </script>
 </body>
 </html>
