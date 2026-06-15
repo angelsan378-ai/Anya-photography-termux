@@ -19,7 +19,7 @@
             scroll-behavior: smooth;
         }
 
-        /* -------------------- НАВИГАЦИЯ И HERO -------------------- */
+        /* -------------------- НАВИГАЦИЯ -------------------- */
         .navbar {
             position: fixed;
             top: 0;
@@ -48,6 +48,8 @@
         @media (min-width: 1024px) {
             .container-wide { padding: 0 5rem; }
         }
+
+        /* -------------------- HERO (поднятый текст) -------------------- */
         .hero {
             position: relative;
             width: 100%;
@@ -65,15 +67,16 @@
         .hero-gradient {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, #151206/60, transparent);
+            background: linear-gradient(to top, rgba(21,18,6,0.6), transparent);
         }
         .hero-content {
             position: relative;
             z-index: 10;
             height: 100%;
             display: flex;
-            align-items: flex-end;
-            padding-bottom: 2rem;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 15%;  /* подняли текст — раньше было прижато к низу */
             padding-left: 8%;
             padding-right: 40%;
         }
@@ -81,12 +84,14 @@
             .hero-content {
                 padding-left: 12%;
                 padding-right: 45%;
+                padding-bottom: 18%;
             }
         }
         @media (min-width: 1024px) {
             .hero-content {
                 padding-left: 20%;
                 padding-right: 50%;
+                padding-bottom: 20%;
             }
         }
         .hero-title {
@@ -97,7 +102,7 @@
             line-height: 1.1;
         }
         .hero-sub {
-            color: #DFD480/60;
+            color: rgba(223,212,128,0.6);
             text-transform: uppercase;
             letter-spacing: 0.4em;
             font-size: clamp(2rem, 2.6vw, 2.6rem);
@@ -189,13 +194,13 @@
             }
         }
 
-        /* -------------------- ОСТАЛЬНЫЕ СЕКЦИИ (ВРЕМЕННЫЕ ЗАГОЛОВКИ) -------------------- */
+        /* -------------------- ВРЕМЕННЫЕ ЗАГОЛОВКИ -------------------- */
         .coming-soon {
             text-align: center;
             padding: 4rem 1rem;
             color: #9B9144;
             font-size: 1.2rem;
-            border-top: 1px solid #9B9144/20;
+            border-top: 1px solid rgba(155,145,68,0.2);
             margin-top: 2rem;
         }
         footer {
@@ -215,14 +220,14 @@
     <div class="container-wide" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; padding-bottom: 1.5rem;">
         <a href="#" style="font-size: 18px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: #F4F1EC; text-decoration: none;">Anya Stsetskevich</a>
         <div style="display: flex; gap: 3rem;">
-            <button onclick="scrollToSection('portfolio')" style="background: none; border: none; color: #F4F1EC/80; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.22em; cursor: pointer;">Work</button>
-            <button onclick="scrollToSection('about')" style="background: none; border: none; color: #F4F1EC/80; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.22em; cursor: pointer;">About</button>
-            <button onclick="scrollToSection('contact')" style="background: none; border: none; color: #F4F1EC/80; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.22em; cursor: pointer;">Contact</button>
+            <button onclick="scrollToSection('portfolio')" style="background: none; border: none; color: rgba(255,255,255,0.8); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.22em; cursor: pointer;">Work</button>
+            <button onclick="scrollToSection('about')" style="background: none; border: none; color: rgba(255,255,255,0.8); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.22em; cursor: pointer;">About</button>
+            <button onclick="scrollToSection('contact')" style="background: none; border: none; color: rgba(255,255,255,0.8); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.22em; cursor: pointer;">Contact</button>
         </div>
     </div>
 </nav>
 
-<!-- HERO СЕКЦИЯ -->
+<!-- HERO СЕКЦИЯ (текст поднят выше) -->
 <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-gradient"></div>
@@ -234,7 +239,7 @@
     </div>
 </section>
 
-<!-- ПОРТФОЛИО (ЗАКРЕПЛЁННАЯ СЕТКА) -->
+<!-- ПОРТФОЛИО -->
 <section id="portfolio">
     <div class="portfolio-container">
         <div class="work-label">Work</div>
@@ -275,7 +280,7 @@
     </div>
 </section>
 
-<!-- ВРЕМЕННЫЕ СЕКЦИИ (чтобы было куда скроллить) -->
+<!-- ВРЕМЕННЫЕ СЕКЦИИ ABOUT И CONTACT -->
 <section id="about" class="coming-soon">About section — скоро добавим</section>
 <section id="contact" class="coming-soon">Contact section — скоро добавим</section>
 
