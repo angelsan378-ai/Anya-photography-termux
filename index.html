@@ -49,14 +49,14 @@
             .container-wide { padding: 0 5rem; }
         }
 
-        /* -------------------- HERO -------------------- */
+        /* -------------------- HERO (исправленное позиционирование) -------------------- */
         .hero {
             position: relative;
             width: 100%;
             overflow: hidden;
             background-color: #151206;
             height: 45vh;
-            min-height: 320px;
+            min-height: 360px;
         }
         .hero-bg {
             position: absolute;
@@ -70,28 +70,24 @@
             background: linear-gradient(to top, rgba(21,18,6,0.6), transparent);
         }
         .hero-content {
-            position: relative;
+            position: absolute;
+            bottom: 22%;      /* золотое сечение — текст на уровне нижней трети */
+            left: 8%;
+            right: 40%;
             z-index: 10;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding-bottom: 15%;
-            padding-left: 8%;
-            padding-right: 40%;
         }
         @media (min-width: 768px) {
             .hero-content {
-                padding-left: 12%;
-                padding-right: 45%;
-                padding-bottom: 18%;
+                left: 12%;
+                right: 45%;
+                bottom: 25%;
             }
         }
         @media (min-width: 1024px) {
             .hero-content {
-                padding-left: 20%;
-                padding-right: 50%;
-                padding-bottom: 20%;
+                left: 20%;
+                right: 50%;
+                bottom: 28%;
             }
         }
         .hero-title {
@@ -343,7 +339,7 @@
             background-color: rgba(155,145,68,0.05);
         }
 
-        /* -------------------- CONTACT (новая секция) -------------------- */
+        /* -------------------- CONTACT -------------------- */
         .contact-section {
             position: relative;
             background-color: #F4F1EC;
@@ -392,7 +388,6 @@
                 gap: 3rem;
             }
         }
-        /* форма */
         .contact-form {
             background-color: rgba(255,255,255,0.8);
             backdrop-filter: blur(4px);
@@ -495,7 +490,6 @@
             background-color: #2a2610;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        /* контактная информация */
         .contact-info {
             background-color: rgba(255,255,255,0.6);
             backdrop-filter: blur(4px);
@@ -613,10 +607,8 @@
     <div class="hero-bg"></div>
     <div class="hero-gradient"></div>
     <div class="hero-content">
-        <div>
-            <div class="hero-title">Anya Stsetskevich</div>
-            <div class="hero-sub">Photography</div>
-        </div>
+        <div class="hero-title">Anya Stsetskevich</div>
+        <div class="hero-sub">Photography</div>
     </div>
 </section>
 
@@ -700,7 +692,6 @@
             <div class="contact-desc">Every great photo starts with a conversation. Tell me about your vision and let's bring it to life.</div>
         </div>
         <div class="contact-grid">
-            <!-- форма -->
             <form id="bookingForm" class="contact-form">
                 <div class="form-group">
                     <label class="form-label">Your Name <span>*</span></label>
@@ -732,7 +723,6 @@
                 </div>
                 <button type="submit" class="submit-btn">Send Request →</button>
             </form>
-            <!-- контактная информация -->
             <div class="contact-info">
                 <div class="info-title">Get in Touch</div>
                 <div class="info-item">
