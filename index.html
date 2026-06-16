@@ -114,7 +114,7 @@
             }
         }
 
-        /* -------------------- HERO (прямая ссылка на фото) -------------------- */
+        /* -------------------- HERO -------------------- */
         .hero {
             position: relative;
             width: 100%;
@@ -212,6 +212,12 @@
             letter-spacing: 0.1em;
             width: 100%;
             transition: transform 0.4s ease, background-color 0.3s;
+            overflow: hidden;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .card:hover .card-image {
             transform: scale(1.02);
@@ -671,7 +677,12 @@
         <div class="portfolio-section">
             <div class="section-title">Portrait Photography</div>
             <div class="grid-two">
-                <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Street Portrait Compilation</span><span class="card-year">2025</span></div></div>
+                <!-- Street Portrait Compilation -->
+                <div class="card">
+                    <div class="card-image"><img src="street-portrait-01.jpg" alt="Street Portrait Compilation"></div>
+                    <div class="card-caption"><span class="card-title">Street Portrait Compilation</span><span class="card-year">2025</span></div>
+                </div>
+                <!-- остальные пока с заглушками -->
                 <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Yozefa Stsiatskevich</span><span class="card-year">2024</span></div></div>
                 <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Kayla</span><span class="card-year">2025</span></div></div>
                 <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Naveed</span><span class="card-year">2025</span></div></div>
