@@ -1,1 +1,287 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Selv 2025 – Anya Stsetskevich</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #F4F1EC;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            color: #151206;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+            background: transparent;
+            padding: 1rem 1.5rem;
+        }
+        .navbar.scrolled {
+            background-color: #F4F1EC;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        .navbar.scrolled a,
+        .navbar.scrolled button {
+            color: #151206 !important;
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #F4F1EC;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: none;
+            gap: 2rem;
+        }
+        .nav-links a {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .nav-links a:hover {
+            color: #DFD480;
+        }
+        .menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: #F4F1EC;
+            cursor: pointer;
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            background-color: #F4F1EC;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 1rem;
+        }
+        .mobile-menu.open {
+            display: flex;
+        }
+        .mobile-menu a {
+            background: none;
+            border: none;
+            color: #686025;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            cursor: pointer;
+            padding: 0.5rem;
+            text-decoration: none;
+        }
+        @media (min-width: 768px) {
+            .navbar {
+                padding: 1.5rem 3rem;
+            }
+            .nav-links {
+                display: flex;
+            }
+            .menu-toggle {
+                display: none;
+            }
+            .mobile-menu {
+                display: none !important;
+            }
+            .logo {
+                font-size: 18px;
+            }
+        }
+        .album-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 1.5rem 4rem;
+        }
+        .album-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid rgba(155,145,68,0.3);
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .album-title {
+            font-size: clamp(1.8rem, 4vw, 3.5rem);
+            font-weight: 200;
+            letter-spacing: -0.02em;
+            color: #151206;
+        }
+        .album-title span {
+            color: #9B9144;
+            font-weight: 300;
+        }
+        .back-link {
+            color: #9B9144;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .back-link:hover {
+            color: #686025;
+        }
+        .back-link svg {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            background-color: #E8E6E0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item.portrait {
+            aspect-ratio: 3 / 4;
+        }
+        .gallery-item.landscape {
+            aspect-ratio: 4 / 3;
+        }
+        @media (max-width: 768px) {
+            .album-container {
+                padding: 6rem 1rem 3rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .album-title {
+                font-size: 1.4rem;
+            }
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #9B9144;
+            letter-spacing: 0.1em;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">Anya Stsetskevich</a>
+        <div class="nav-links">
+            <a href="index.html#portfolio">Work</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+            <svg width="24" height="14" viewBox="0 0 18 12" fill="currentColor"><rect width="18" height="0.75" y="0"/><rect width="12" height="0.75" y="5.625"/><rect width="18" height="0.75" y="11.25"/></svg>
+        </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#portfolio">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="album-container">
+    <div class="album-header">
+        <h1 class="album-title">Selv <span>2025</span></h1>
+        <a href="index.html#portfolio" class="back-link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            All Projects
+        </a>
+    </div>
+    <div class="gallery-grid">
+        <!-- все 12 фотографий: от 02 до 13, первым идёт 02 (обложка) -->
+        <div class="gallery-item portrait"><img src="selv-02.jpg" alt="Selv 02"></div>
+        <div class="gallery-item portrait"><img src="selv-03.jpg" alt="Selv 03"></div>
+        <div class="gallery-item portrait"><img src="selv-04.jpg" alt="Selv 04"></div>
+        <div class="gallery-item portrait"><img src="selv-05.jpg" alt="Selv 05"></div>
+        <div class="gallery-item portrait"><img src="selv-06.jpg" alt="Selv 06"></div>
+        <div class="gallery-item portrait"><img src="selv-07.jpg" alt="Selv 07"></div>
+        <div class="gallery-item portrait"><img src="selv-08.jpg" alt="Selv 08"></div>
+        <div class="gallery-item portrait"><img src="selv-09.jpg" alt="Selv 09"></div>
+        <div class="gallery-item portrait"><img src="selv-10.jpg" alt="Selv 10"></div>
+        <div class="gallery-item portrait"><img src="selv-11.jpg" alt="Selv 11"></div>
+        <div class="gallery-item portrait"><img src="selv-12.jpg" alt="Selv 12"></div>
+        <div class="gallery-item portrait"><img src="selv-13.jpg" alt="Selv 13"></div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Anya Stsetskevich
+</footer>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+    });
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('open');
+    }
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+</script>
+</body>
+</html>
