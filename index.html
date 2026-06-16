@@ -200,6 +200,15 @@
             grid-template-columns: 1fr;
             gap: 2rem;
         }
+        .card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
         .card-image {
             aspect-ratio: 3 / 4;
             background-color: #E8E6E0;
@@ -236,6 +245,9 @@
             letter-spacing: 0.02em;
             color: #151206;
             transition: color 0.3s;
+        }
+        .card:hover .card-title {
+            color: #9B9144;
         }
         .card-year {
             font-size: 0.9rem;
@@ -677,12 +689,14 @@
         <div class="portfolio-section">
             <div class="section-title">Portrait Photography</div>
             <div class="grid-two">
-                <!-- Street Portrait Compilation -->
+                <!-- Street Portrait Compilation (ссылка ведёт на страницу альбома) -->
                 <div class="card">
-                    <div class="card-image"><img src="street-portrait-01.jpg" alt="Street Portrait Compilation"></div>
-                    <div class="card-caption"><span class="card-title">Street Portrait Compilation</span><span class="card-year">2025</span></div>
+                    <a href="street-portrait.html">
+                        <div class="card-image"><img src="street-portrait-01.jpg" alt="Street Portrait Compilation"></div>
+                        <div class="card-caption"><span class="card-title">Street Portrait Compilation</span><span class="card-year">2025</span></div>
+                    </a>
                 </div>
-                <!-- остальные пока с заглушками -->
+                <!-- остальные карточки пока с заглушками -->
                 <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Yozefa Stsiatskevich</span><span class="card-year">2024</span></div></div>
                 <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Kayla</span><span class="card-year">2025</span></div></div>
                 <div class="card"><div class="card-image">Your image here</div><div class="card-caption"><span class="card-title">Naveed</span><span class="card-year">2025</span></div></div>
