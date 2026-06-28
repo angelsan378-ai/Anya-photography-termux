@@ -112,24 +112,23 @@
             }
         }
 
-        /* ========== HERO – ИСХОДНОЕ СОСТОЯНИЕ (ДО ПРАВОК ДЛЯ СТАРОГО КОМПЬЮТЕРА) ========== */
+        /* ========== HERO – ИСХОДНОЕ СОСТОЯНИЕ (45vh, текст прижат к низу) ========== */
         .hero {
             position: relative;
             width: 100%;
+            overflow: hidden;
             background-color: #151206;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding-bottom: 20vh;
+            height: 45vh;
+            min-height: 320px;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
             background-image: url('https://raw.githubusercontent.com/angelsan378-ai/Anya-photography-termux/main/_DSC2876.JPG');
             background-size: cover;
             background-position: center;
-        }
-        .hero::before {
-            content: '';
-            display: block;
-            height: 70px;
+            opacity: 0.6;
+            z-index: 0;
         }
         .hero-overlay {
             position: absolute;
@@ -140,6 +139,10 @@
         .hero-content {
             position: relative;
             z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 2rem;
             padding-left: 5%;
             padding-right: 5%;
         }
@@ -162,6 +165,7 @@
             .hero-content {
                 padding-left: 12%;
                 padding-right: 45%;
+                padding-bottom: 3rem;
             }
             .hero-title {
                 letter-spacing: 0.15em;
@@ -171,7 +175,7 @@
             }
         }
 
-        /* ========== ОСТАЛЬНЫЕ СТИЛИ (ПОРТФОЛИО, ABOUT, CONTACT – без изменений) ========== */
+        /* ========== ОСТАЛЬНЫЕ СТИЛИ (без изменений) ========== */
         .portfolio-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -669,12 +673,15 @@
     </div>
 </nav>
 
-<!-- HERO – возвращён к исходному виду (текст внизу) -->
+<!-- HERO – возвращён к исходному виду: 45vh, текст прижат к низу -->
 <section class="hero">
+    <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <div class="hero-title">Anya Stsetskevich</div>
-        <div class="hero-sub">Photography</div>
+        <div>
+            <div class="hero-title">Anya Stsetskevich</div>
+            <div class="hero-sub">Photography</div>
+        </div>
     </div>
 </section>
 
